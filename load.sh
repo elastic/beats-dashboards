@@ -1,6 +1,11 @@
 #!/bin/sh
 
-ELASTICSEARCH=http://localhost:9200/
+if [ -z "$1" ]; then
+    _ELASTICHOST=localhost
+else
+    _ELASTICHOST=$1
+fi
+ELASTICSEARCH=http://$_ELASTICHOST:9200/
 
 for file in generated/*.json
 do
