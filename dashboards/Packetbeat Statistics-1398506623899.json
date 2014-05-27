@@ -265,7 +265,7 @@
           "error": false,
           "span": 6,
           "editable": true,
-          "type": "hive",
+          "type": "force",
           "loadingEditor": false,
           "spyable": true,
           "size": 50,
