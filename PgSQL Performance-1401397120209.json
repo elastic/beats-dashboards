@@ -1,11 +1,11 @@
 {
-  "title": "MySQL Performance",
+  "title": "PgSQL Performance",
   "services": {
     "query": {
       "list": {
         "0": {
-          "query": "type: mysql",
-          "alias": "mysql",
+          "query": "type: pgsql",
+          "alias": "pgsql",
           "color": "#BF1B00",
           "id": 0,
           "pin": true,
@@ -19,7 +19,7 @@
           "pin": true,
           "type": "lucene",
           "enable": true,
-          "query": "mysql.method: SELECT"
+          "query": "pgsql.method: SELECT"
         },
         "2": {
           "id": 2,
@@ -28,7 +28,7 @@
           "pin": true,
           "type": "lucene",
           "enable": true,
-          "query": "mysql.method: INSERT or mysql.method: UPDATE or mysql.method: DELETE or mysql.method: REPLACE"
+          "query": "pgsql.method: INSERT or pgsql.method: UPDATE or pgsql.method: DELETE or pgsql.method: REPLACE"
         },
         "3": {
           "id": 3,
@@ -37,7 +37,7 @@
           "pin": true,
           "type": "lucene",
           "enable": true,
-          "query": "mysql.method: SELECT"
+          "query": "pgsql.method: SELECT"
         },
         "4": {
           "id": 4,
@@ -46,7 +46,7 @@
           "pin": true,
           "type": "lucene",
           "enable": true,
-          "query": "mysql.method: INSERT"
+          "query": "pgsql.method: INSERT"
         },
         "5": {
           "id": 5,
@@ -55,7 +55,7 @@
           "pin": true,
           "type": "lucene",
           "enable": true,
-          "query": "mysql.method: UPDATE"
+          "query": "pgsql.method: UPDATE"
         },
         "6": {
           "id": 6,
@@ -64,7 +64,7 @@
           "pin": true,
           "type": "lucene",
           "enable": true,
-          "query": "mysql.method: DELETE"
+          "query": "pgsql.method: DELETE"
         }
       },
       "ids": [
@@ -832,7 +832,7 @@
     "load_gist": false,
     "load_elasticsearch": true,
     "load_elasticsearch_size": 20,
-    "load_local": true,
+    "load_local": false,
     "hide": false
   },
   "refresh": false
