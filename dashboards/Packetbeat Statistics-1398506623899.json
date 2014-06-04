@@ -968,5 +968,5 @@
     "load_local": false,
     "hide": false
   },
-  "refresh": "5m"
+  "refresh": false
 }
