@@ -194,6 +194,10 @@
   ],
   "nav": [
     {
+      "type": "dashboard_dropdown",
+      "label": "Page: "
+    },
+    {
       "status": "Stable",
       "notice": false,
       "enable": true,

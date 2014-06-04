@@ -921,6 +921,10 @@
   ],
   "nav": [
     {
+      "type": "dashboard_dropdown",
+      "label": "Page: "
+    },
+    {
       "type": "timepicker",
       "collapse": false,
       "notice": false,
