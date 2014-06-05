@@ -621,7 +621,8 @@
             "query_as_alias": true
           },
           "title": "Database Throughput",
-          "scaleSeconds": false
+          "scaleSeconds": false,
+          "error": "FacetPhaseExecutionException[Facet [0]: (value) field [pgsql.size] not found]"
         },
         {
           "span": 6,
@@ -694,7 +695,7 @@
             "value_type": "cumulative",
             "query_as_alias": true
           },
-          "title": "Database Round Trip Time"
+          "title": "Database responsetime (ms)"
         },
         {
           "error": false,
@@ -772,7 +773,7 @@
           "title": "Top Slow Queries"
         },
         {
-          "error": false,
+          "error": "SearchParseException[[packetbeat-2014.06.05][1]: query[filtered(type:pgsql)->BooleanFilter(+cache(@timestamp:[1401967351605 TO 1402010551605]))],from[-1],size[10]: Parse Failure [No mapping found for [pgsql.num_rows] in order to sort on]]",
           "span": 4,
           "editable": true,
           "type": "table",
