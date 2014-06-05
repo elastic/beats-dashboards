@@ -1,274 +1,52 @@
 {
-  "title": "Packetbeat Statistics",
-  "services": {
-    "query": {
-      "idQueue": [
-        4
-      ],
-      "list": {
-        "0": {
-          "query": "responsetime: [0 TO 10}",
-          "alias": "below_10ms",
-          "color": "#7EB26D",
-          "id": 0,
-          "pin": true,
-          "type": "lucene",
-          "enable": true
-        },
-        "1": {
-          "id": 1,
-          "color": "#CCA300",
-          "query": "responsetime: [10 TO 30}",
-          "alias": "below_30ms",
-          "pin": true,
-          "type": "lucene",
-          "enable": true
-        },
-        "2": {
-          "id": 2,
-          "color": "#C15C17",
-          "query": "responsetime: [30 TO 50}",
-          "alias": "below_50ms",
-          "pin": true,
-          "type": "lucene",
-          "enable": true
-        },
-        "3": {
-          "id": 3,
-          "color": "#E24D42",
-          "query": "responsetime: [50 TO 100}",
-          "alias": "below_100ms",
-          "pin": true,
-          "type": "lucene",
-          "enable": true
-        },
-        "4": {
-          "id": 4,
-          "color": "#82B5D8",
-          "alias": "http",
-          "pin": true,
-          "type": "lucene",
-          "enable": true,
-          "query": "type: http"
-        },
-        "5": {
-          "id": 5,
-          "color": "#E5A8E2",
-          "alias": "mysql",
-          "pin": true,
-          "type": "lucene",
-          "enable": true,
-          "query": "type: mysql"
-        },
-        "6": {
-          "id": 6,
-          "color": "#58140C",
-          "alias": "appserver1",
-          "pin": true,
-          "type": "lucene",
-          "enable": true,
-          "query": "dst_server: appserver1"
-        },
-        "7": {
-          "id": 7,
-          "color": "#705DA0",
-          "alias": "nginx1",
-          "pin": true,
-          "type": "lucene",
-          "enable": true,
-          "query": "dst_server: nginx1"
-        },
-        "8": {
-          "id": 8,
-          "color": "#6ED0E0",
-          "alias": "users",
-          "pin": true,
-          "type": "lucene",
-          "enable": true,
-          "query": "src_server: other"
-        },
-        "9": {
-          "id": 9,
-          "color": "#7EB26D",
-          "alias": "mysql_OK",
-          "pin": true,
-          "type": "lucene",
-          "enable": true,
-          "query": "mysql.iserror: false"
-        },
-        "10": {
-          "id": 10,
-          "color": "#BF1B00",
-          "alias": "mysql_error",
-          "pin": true,
-          "type": "lucene",
-          "enable": true,
-          "query": "mysql.iserror: true"
-        },
-        "11": {
-          "id": 11,
-          "color": "#58140C",
-          "alias": "slow_queries",
-          "pin": true,
-          "type": "lucene",
-          "enable": true,
-          "query": "responsetime: [10000 TO 100000] and type: mysql"
-        },
-        "12": {
-          "id": 12,
-          "color": "#3F2B5B",
-          "alias": "all",
-          "pin": true,
-          "type": "lucene",
-          "enable": true,
-          "query": "*"
-        },
-        "13": {
-          "id": 13,
-          "color": "#BF1B00",
-          "alias": "http_500",
-          "pin": true,
-          "type": "lucene",
-          "enable": true,
-          "query": "http.response.code: 500"
-        },
-        "14": {
-          "id": 14,
-          "color": "#890F02",
-          "alias": "http_503",
-          "pin": true,
-          "type": "lucene",
-          "enable": true,
-          "query": "http.response.code: 503"
-        },
-        "15": {
-          "id": 15,
-          "color": "#E0752D",
-          "alias": "http_404",
-          "pin": true,
-          "type": "lucene",
-          "enable": true,
-          "query": "http.response.code: 404"
-        },
-        "16": {
-          "id": 16,
-          "color": "#EAB839",
-          "alias": "http_403",
-          "pin": true,
-          "type": "lucene",
-          "enable": true,
-          "query": "http.response.code: 403"
-        },
-        "17": {
-          "id": 17,
-          "color": "#890F02",
-          "alias": "above_100ms",
-          "pin": true,
-          "type": "lucene",
-          "enable": true,
-          "query": "responsetime: [100 TO 100000]"
-        }
-      },
-      "ids": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17
-      ]
-    },
-    "filter": {
-      "idQueue": [
-        1,
-        2
-      ],
-      "list": {
-        "0": {
-          "type": "time",
-          "field": "@timestamp",
-          "from": "now-12h",
-          "to": "now",
-          "mandate": "must",
-          "active": true,
-          "alias": "",
-          "id": 0
-        }
-      },
-      "ids": [
-        0
-      ]
-    }
+  "index": {
+    "default": "_all",
+    "pattern": "[packetbeat-]YYYY.MM.DD",
+    "warm_fields": true,
+    "interval": "day"
   },
+  "style": "light",
   "rows": [
     {
-      "title": "Map",
-      "height": "400px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
+      "notice": false,
       "panels": [
         {
-          "error": false,
-          "span": 6,
-          "editable": true,
-          "type": "map",
-          "loadingEditor": false,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10,
-              11,
-              12,
-              13,
-              14,
-              15,
-              16,
-              17
-            ]
-          },
           "map": "world",
+          "span": 6,
+          "title": "Traffic distribution",
+          "error": false,
+          "editable": true,
+          "field": "src_country",
           "colors": [
             "#A0E2E2",
             "#265656"
           ],
-          "size": 100,
-          "exclude": [],
-          "spyable": true,
           "index_limit": 0,
-          "title": "Traffic distribution",
-          "field": "src_country"
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              12,
+              17,
+              18,
+              19
+            ]
+          },
+          "spyable": true,
+          "exclude": [],
+          "loadingEditor": false,
+          "type": "map",
+          "size": 100
         },
         {
-          "error": false,
           "span": 6,
-          "editable": true,
-          "type": "force",
-          "loadingEditor": false,
-          "spyable": true,
-          "size": 50,
+          "title": "Hosts",
+          "dst_field": "dst_server",
           "queries": {
             "mode": "all",
             "ids": [
@@ -289,30 +67,69 @@
               14,
               15,
               16,
-              17
+              17,
+              18,
+              19
             ]
           },
-          "title": "Hosts",
+          "editable": true,
           "src_field": "src_server",
-          "dst_field": "dst_server"
+          "error": false,
+          "spyable": true,
+          "loadingEditor": false,
+          "type": "force",
+          "size": 50
         }
       ],
-      "notice": false
+      "collapse": false,
+      "title": "Map",
+      "editable": true,
+      "height": "400px",
+      "collapsable": true
     },
     {
-      "title": "General View",
-      "height": "180px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
+      "notice": false,
       "panels": [
         {
+          "labels": true,
+          "tmode": "terms",
+          "valuefield": "",
+          "exclude": [],
+          "spyable": true,
+          "size": 10,
+          "style": {
+            "font-size": "10pt"
+          },
+          "span": 3,
+          "title": "Protocols",
+          "tilt": false,
+          "arrangement": "horizontal",
+          "field": "_type",
+          "other": false,
+          "loadingEditor": false,
+          "type": "terms",
+          "missing": false,
           "error": false,
-          "span": 4,
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              12
+            ]
+          },
+          "order": "count"
+        },
+        {
+          "error": false,
+          "span": 3,
           "editable": true,
           "type": "terms",
           "loadingEditor": false,
-          "field": "_type",
+          "field": "status",
           "exclude": [],
           "missing": false,
           "other": false,
@@ -337,27 +154,92 @@
               3,
               4,
               5,
-              6,
-              7,
-              8,
-              9,
-              10,
-              11,
               12,
-              13,
-              14,
-              15,
-              16,
-              17
+              17,
+              18,
+              19
             ]
           },
           "tmode": "terms",
           "tstat": "total",
           "valuefield": "",
-          "title": "Protocols"
+          "title": "Success vs Error"
         },
         {
-          "span": 8,
+          "show_query": true,
+          "bars": false,
+          "interval": "1m",
+          "zoomlinks": true,
+          "annotate": {
+            "sort": [
+              "_score",
+              "desc"
+            ],
+            "query": "*",
+            "enable": false,
+            "field": "_type",
+            "size": 20
+          },
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1y"
+          ],
+          "timezone": "browser",
+          "spyable": true,
+          "linewidth": 3,
+          "percentage": false,
+          "fill": 0,
+          "scale": 1,
+          "span": 6,
+          "title": "Transactions",
+          "tooltip": {
+            "query_as_alias": true,
+            "value_type": "cumulative"
+          },
+          "legend": true,
+          "derivative": false,
+          "loadingEditor": false,
+          "auto_int": false,
+          "type": "histogram",
+          "value_field": null,
+          "x-axis": true,
+          "pointradius": 5,
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "stack": false,
+          "legend_counts": true,
+          "time_field": "@timestamp",
+          "y-axis": true,
+          "lines": true,
+          "y_format": "none",
+          "points": false,
+          "mode": "count",
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              12
+            ]
+          },
+          "resolution": 100,
+          "options": true,
+          "interactive": true
+        },
+        {
+          "span": 6,
           "editable": true,
           "type": "histogram",
           "loadingEditor": false,
@@ -375,7 +257,7 @@
           "queries": {
             "mode": "selected",
             "ids": [
-              12
+              4
             ]
           },
           "annotate": {
@@ -427,261 +309,7 @@
             "value_type": "cumulative",
             "query_as_alias": true
           },
-          "title": "Requests"
-        }
-      ],
-      "notice": false
-    },
-    {
-      "title": "Response time",
-      "height": "200px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "span": 6,
-          "editable": true,
-          "type": "histogram",
-          "loadingEditor": false,
-          "mode": "count",
-          "time_field": "@timestamp",
-          "queries": {
-            "mode": "selected",
-            "ids": [
-              0,
-              1,
-              2,
-              3,
-              17
-            ]
-          },
-          "value_field": "responsetime",
-          "auto_int": false,
-          "resolution": null,
-          "interval": "30m",
-          "intervals": [
-            "auto",
-            "1s",
-            "1m",
-            "5m",
-            "10m",
-            "30m",
-            "1h",
-            "3h",
-            "12h",
-            "1d",
-            "1w",
-            "1M",
-            "1y"
-          ],
-          "fill": 0,
-          "linewidth": 3,
-          "timezone": "browser",
-          "spyable": true,
-          "zoomlinks": true,
-          "bars": true,
-          "stack": false,
-          "points": false,
-          "lines": false,
-          "legend": true,
-          "x-axis": true,
-          "y-axis": true,
-          "percentage": true,
-          "interactive": true,
-          "options": true,
-          "tooltip": {
-            "value_type": "cumulative",
-            "query_as_alias": true
-          },
-          "title": "Slow queries (%)",
-          "scale": 1,
-          "y_format": "none",
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "annotate": {
-            "enable": false,
-            "query": "*",
-            "size": 20,
-            "field": "_type",
-            "sort": [
-              "_score",
-              "desc"
-            ]
-          },
-          "pointradius": 5,
-          "show_query": true,
-          "legend_counts": true,
-          "zerofill": true,
-          "derivative": false
-        },
-        {
-          "span": 6,
-          "editable": true,
-          "type": "histogram",
-          "loadingEditor": false,
-          "mode": "mean",
-          "time_field": "@timestamp",
-          "queries": {
-            "mode": "selected",
-            "ids": [
-              0,
-              1,
-              2,
-              3,
-              17
-            ]
-          },
-          "value_field": "responsetime",
-          "auto_int": false,
-          "resolution": null,
-          "interval": "1m",
-          "intervals": [
-            "auto",
-            "1s",
-            "1m",
-            "5m",
-            "10m",
-            "30m",
-            "1h",
-            "3h",
-            "12h",
-            "1d",
-            "1w",
-            "1M",
-            "1y"
-          ],
-          "fill": 0,
-          "linewidth": 3,
-          "timezone": "browser",
-          "spyable": true,
-          "zoomlinks": true,
-          "bars": true,
-          "stack": true,
-          "points": false,
-          "lines": false,
-          "legend": true,
-          "x-axis": true,
-          "y-axis": true,
-          "percentage": false,
-          "interactive": true,
-          "options": true,
-          "tooltip": {
-            "value_type": "cumulative",
-            "query_as_alias": true
-          },
-          "title": "Response time (mean) per minute",
-          "scale": 1,
-          "y_format": "none",
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "annotate": {
-            "enable": false,
-            "query": "*",
-            "size": 20,
-            "field": "_type",
-            "sort": [
-              "_score",
-              "desc"
-            ]
-          },
-          "pointradius": 5,
-          "show_query": true,
-          "legend_counts": true,
-          "zerofill": true,
-          "derivative": false
-        }
-      ],
-      "notice": false
-    },
-    {
-      "title": "HTTP Response Codes",
-      "height": "200px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "error": false,
-          "span": 6,
-          "editable": true,
-          "type": "terms",
-          "loadingEditor": false,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10,
-              11,
-              12,
-              13,
-              14,
-              15,
-              16,
-              17
-            ]
-          },
-          "field": "http.content_type",
-          "exclude": [
-            ""
-          ],
-          "missing": false,
-          "other": false,
-          "size": 10,
-          "order": "count",
-          "style": {
-            "font-size": "10pt"
-          },
-          "donut": false,
-          "tilt": false,
-          "labels": true,
-          "arrangement": "horizontal",
-          "chart": "bar",
-          "counter_pos": "above",
-          "spyable": true,
-          "title": "HTTP Content-Type",
-          "tmode": "terms",
-          "tstat": "total",
-          "valuefield": ""
-        },
-        {
-          "span": 6,
-          "editable": true,
-          "type": "hits",
-          "loadingEditor": false,
-          "style": {
-            "font-size": "10pt"
-          },
-          "arrangement": "horizontal",
-          "chart": "bar",
-          "counter_pos": "above",
-          "donut": false,
-          "tilt": false,
-          "labels": true,
-          "spyable": true,
-          "queries": {
-            "mode": "selected",
-            "ids": [
-              13,
-              14,
-              15,
-              16
-            ]
-          },
-          "title": "HTTP common errors"
+          "title": "Web transactions"
         },
         {
           "span": 6,
@@ -702,10 +330,8 @@
           "queries": {
             "mode": "selected",
             "ids": [
-              13,
-              14,
-              15,
-              16
+              5,
+              18
             ]
           },
           "annotate": {
@@ -735,12 +361,12 @@
             "1w",
             "1y"
           ],
-          "lines": true,
+          "lines": false,
           "fill": 0,
           "linewidth": 3,
           "points": false,
           "pointradius": 5,
-          "bars": false,
+          "bars": true,
           "stack": true,
           "spyable": true,
           "zoomlinks": true,
@@ -757,20 +383,43 @@
             "value_type": "cumulative",
             "query_as_alias": true
           },
-          "title": "Http common errors"
-        }
-      ],
-      "notice": false
-    },
-    {
-      "title": "Status",
-      "height": "200px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
+          "title": "Database queries"
+        },
         {
-          "span": 7,
+          "error": false,
+          "span": 6,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "http.response.code",
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 10,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "bar",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              4
+            ]
+          },
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "Web transactions errors"
+        },
+        {
+          "span": 6,
           "editable": true,
           "type": "histogram",
           "loadingEditor": false,
@@ -788,8 +437,7 @@
           "queries": {
             "mode": "selected",
             "ids": [
-              9,
-              10
+              19
             ]
           },
           "annotate": {
@@ -819,6 +467,245 @@
             "1w",
             "1y"
           ],
+          "lines": true,
+          "fill": 0,
+          "linewidth": 3,
+          "points": false,
+          "pointradius": 5,
+          "bars": false,
+          "stack": false,
+          "spyable": true,
+          "zoomlinks": true,
+          "options": true,
+          "legend": true,
+          "show_query": true,
+          "interactive": true,
+          "legend_counts": true,
+          "timezone": "browser",
+          "percentage": false,
+          "zerofill": true,
+          "derivative": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": true
+          },
+          "title": "Failed transactions"
+        }
+      ],
+      "collapse": false,
+      "title": "General View",
+      "editable": true,
+      "height": "180px",
+      "collapsable": true
+    },
+    {
+      "notice": false,
+      "panels": [
+        {
+          "show_query": true,
+          "bars": true,
+          "y-axis": true,
+          "zoomlinks": true,
+          "percentage": true,
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1M",
+            "1y"
+          ],
+          "timezone": "browser",
+          "spyable": true,
+          "linewidth": 3,
+          "fill": 0,
+          "scale": 1,
+          "span": 6,
+          "title": "Slow web transactions (%)",
+          "tooltip": {
+            "query_as_alias": true,
+            "value_type": "cumulative"
+          },
+          "stack": false,
+          "derivative": false,
+          "loadingEditor": false,
+          "auto_int": false,
+          "type": "histogram",
+          "value_field": "responsetime",
+          "x-axis": true,
+          "pointradius": 5,
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "legend": true,
+          "legend_counts": true,
+          "annotate": {
+            "sort": [
+              "_score",
+              "desc"
+            ],
+            "query": "*",
+            "enable": false,
+            "field": "_type",
+            "size": 20
+          },
+          "time_field": "@timestamp",
+          "interval": "30m",
+          "lines": false,
+          "y_format": "none",
+          "points": false,
+          "mode": "count",
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              0,
+              1,
+              2,
+              3,
+              17
+            ]
+          },
+          "resolution": null,
+          "options": true,
+          "interactive": true
+        },
+        {
+          "show_query": true,
+          "bars": true,
+          "y-axis": true,
+          "zoomlinks": true,
+          "percentage": false,
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1M",
+            "1y"
+          ],
+          "timezone": "browser",
+          "spyable": true,
+          "linewidth": 3,
+          "fill": 0,
+          "scale": 1,
+          "span": 6,
+          "title": "App server response time (ms) per minute",
+          "tooltip": {
+            "query_as_alias": true,
+            "value_type": "cumulative"
+          },
+          "stack": true,
+          "derivative": false,
+          "loadingEditor": false,
+          "auto_int": false,
+          "type": "histogram",
+          "value_field": "responsetime",
+          "x-axis": true,
+          "pointradius": 5,
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "legend": true,
+          "legend_counts": true,
+          "annotate": {
+            "sort": [
+              "_score",
+              "desc"
+            ],
+            "query": "*",
+            "enable": false,
+            "field": "_type",
+            "size": 20
+          },
+          "time_field": "@timestamp",
+          "interval": "1m",
+          "lines": false,
+          "y_format": "none",
+          "points": false,
+          "mode": "mean",
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              0,
+              1,
+              2,
+              3,
+              17
+            ]
+          },
+          "resolution": null,
+          "options": true,
+          "interactive": true
+        },
+        {
+          "span": 6,
+          "editable": true,
+          "type": "histogram",
+          "loadingEditor": false,
+          "mode": "max",
+          "time_field": "@timestamp",
+          "value_field": "http.content_length",
+          "x-axis": true,
+          "y-axis": true,
+          "scale": 1,
+          "y_format": "bytes",
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              4
+            ]
+          },
+          "annotate": {
+            "enable": false,
+            "query": "*",
+            "size": 20,
+            "field": "_type",
+            "sort": [
+              "_score",
+              "desc"
+            ]
+          },
+          "auto_int": true,
+          "resolution": 100,
+          "interval": "5m",
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1y"
+          ],
           "lines": false,
           "fill": 0,
           "linewidth": 3,
@@ -834,22 +721,95 @@
           "interactive": true,
           "legend_counts": true,
           "timezone": "browser",
-          "percentage": true,
+          "percentage": false,
           "zerofill": true,
           "derivative": false,
           "tooltip": {
             "value_type": "cumulative",
             "query_as_alias": true
           },
-          "title": "MySQL Status"
+          "title": "Web transactions throughput"
+        },
+        {
+          "span": 6,
+          "editable": true,
+          "type": "histogram",
+          "loadingEditor": false,
+          "mode": "max",
+          "time_field": "@timestamp",
+          "value_field": "mysql.size",
+          "x-axis": true,
+          "y-axis": true,
+          "scale": 1,
+          "y_format": "bytes",
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              5
+            ]
+          },
+          "annotate": {
+            "enable": false,
+            "query": "*",
+            "size": 20,
+            "field": "_type",
+            "sort": [
+              "_score",
+              "desc"
+            ]
+          },
+          "auto_int": true,
+          "resolution": 100,
+          "interval": "5m",
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1y"
+          ],
+          "lines": false,
+          "fill": 0,
+          "linewidth": 3,
+          "points": false,
+          "pointradius": 5,
+          "bars": true,
+          "stack": false,
+          "spyable": true,
+          "zoomlinks": true,
+          "options": true,
+          "legend": true,
+          "show_query": true,
+          "interactive": true,
+          "legend_counts": true,
+          "timezone": "browser",
+          "percentage": false,
+          "zerofill": true,
+          "derivative": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": true
+          },
+          "title": "Database throughput"
         },
         {
           "error": false,
-          "span": 5,
+          "span": 6,
           "editable": true,
           "type": "terms",
           "loadingEditor": false,
-          "field": "mysql.error_code",
+          "field": "http.request.line.raw",
           "exclude": [],
           "missing": false,
           "other": false,
@@ -862,74 +822,122 @@
           "tilt": false,
           "labels": true,
           "arrangement": "horizontal",
-          "chart": "bar",
+          "chart": "table",
           "counter_pos": "above",
           "spyable": true,
           "queries": {
             "mode": "selected",
             "ids": [
-              5
+              4
             ]
           },
           "tmode": "terms",
           "tstat": "total",
           "valuefield": "",
-          "title": "MySQL Error codes"
+          "title": "Top Web Transactions"
+        },
+        {
+          "error": false,
+          "span": 6,
+          "editable": true,
+          "type": "table",
+          "loadingEditor": false,
+          "size": 10,
+          "pages": 1,
+          "offset": 0,
+          "sort": [
+            "responsetime",
+            "desc"
+          ],
+          "overflow": "min-height",
+          "fields": [
+            "http.request.line",
+            "http.response.code",
+            "responsetime"
+          ],
+          "highlight": [],
+          "sortable": true,
+          "header": true,
+          "paging": false,
+          "field_list": false,
+          "all_fields": false,
+          "trimFactor": 300,
+          "localTime": false,
+          "timeField": "@timestamp",
+          "spyable": true,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              4
+            ]
+          },
+          "style": {
+            "font-size": "9pt"
+          },
+          "normTimes": true,
+          "title": "Top slowest web transactions"
         }
       ],
-      "notice": false
+      "collapse": false,
+      "title": "Response time",
+      "editable": true,
+      "height": "200px",
+      "collapsable": true
     }
   ],
-  "editable": true,
+  "title": "Packetbeat Statistics",
   "failover": true,
-  "index": {
-    "interval": "day",
-    "pattern": "[packetbeat-]YYYY.MM.DD",
-    "default": "_all",
-    "warm_fields": true
+  "editable": true,
+  "refresh": false,
+  "loader": {
+    "load_gist": false,
+    "hide": false,
+    "save_temp": true,
+    "load_elasticsearch_size": 20,
+    "load_local": false,
+    "save_temp_ttl": "30d",
+    "load_elasticsearch": true,
+    "save_local": true,
+    "save_elasticsearch": true,
+    "save_temp_ttl_enable": true,
+    "save_gist": false,
+    "save_default": true
   },
-  "style": "light",
-  "panel_hints": true,
   "pulldowns": [
     {
-      "type": "query",
-      "collapse": true,
       "notice": false,
       "enable": true,
-      "query": "*",
+      "collapse": false,
+      "remember": 10,
       "pinned": true,
+      "query": "*",
+      "type": "query",
       "history": [
-        "http.response.code: 403",
-        "http.response.code: 404",
-        "http.response.code: 503",
-        "http.response.code: 500",
+        "status: Error",
+        "type: pgsql",
+        "type:http AND responsetime: [100 TO 100000]",
         "*",
-        "responsetime: [10000 TO 100000] and type: mysql",
-        "mysql.iserror: true",
-        "mysql.iserror: false",
-        "src_server: other",
-        "dst_server: nginx1"
-      ],
-      "remember": 10
+        "type: mysql",
+        "type: http",
+        "type:http AND responsetime: [50 TO 100}",
+        "type:http AND responsetime: [30 TO 50}",
+        "type: http AND responsetime: [10 TO 30}",
+        "type: http AND responsetime: [0 TO 10}"
+      ]
     },
     {
-      "type": "filtering",
-      "collapse": false,
       "notice": true,
-      "enable": false
+      "enable": false,
+      "type": "filtering",
+      "collapse": false
     }
   ],
   "nav": [
     {
-      "type": "dashboard_dropdown",
-      "label": "Page: "
-    },
-    {
-      "type": "timepicker",
-      "collapse": false,
+      "status": "Stable",
       "notice": false,
       "enable": true,
-      "status": "Stable",
+      "collapse": false,
       "time_options": [
         "5m",
         "15m",
@@ -949,24 +957,143 @@
         "5m",
         "15m"
       ],
+      "filter_id": 0,
       "timefield": "@timestamp",
       "now": true,
-      "filter_id": 0
+      "type": "timepicker"
     }
   ],
-  "loader": {
-    "save_gist": false,
-    "save_elasticsearch": true,
-    "save_local": true,
-    "save_default": true,
-    "save_temp": true,
-    "save_temp_ttl_enable": true,
-    "save_temp_ttl": "30d",
-    "load_gist": false,
-    "load_elasticsearch": true,
-    "load_elasticsearch_size": 20,
-    "load_local": false,
-    "hide": false
+  "services": {
+    "filter": {
+      "list": {
+        "0": {
+          "from": "now-12h",
+          "to": "now",
+          "field": "@timestamp",
+          "alias": "",
+          "mandate": "must",
+          "active": true,
+          "type": "time",
+          "id": 0
+        }
+      },
+      "ids": [
+        0
+      ],
+      "idQueue": [
+        1,
+        2
+      ]
+    },
+    "query": {
+      "list": {
+        "0": {
+          "enable": true,
+          "pin": true,
+          "color": "#7EB26D",
+          "alias": "below_10ms",
+          "query": "type: http AND responsetime: [0 TO 10}",
+          "type": "lucene",
+          "id": 0
+        },
+        "1": {
+          "enable": true,
+          "pin": true,
+          "color": "#CCA300",
+          "alias": "below_30ms",
+          "query": "type: http AND responsetime: [10 TO 30}",
+          "type": "lucene",
+          "id": 1
+        },
+        "2": {
+          "enable": true,
+          "pin": true,
+          "color": "#C15C17",
+          "alias": "below_50ms",
+          "query": "type:http AND responsetime: [30 TO 50}",
+          "type": "lucene",
+          "id": 2
+        },
+        "3": {
+          "enable": true,
+          "pin": true,
+          "color": "#E24D42",
+          "alias": "below_100ms",
+          "query": "type:http AND responsetime: [50 TO 100}",
+          "type": "lucene",
+          "id": 3
+        },
+        "4": {
+          "enable": true,
+          "pin": true,
+          "color": "#82B5D8",
+          "alias": "http",
+          "query": "type: http",
+          "type": "lucene",
+          "id": 4
+        },
+        "5": {
+          "enable": true,
+          "pin": true,
+          "color": "#E5A8E2",
+          "alias": "mysql",
+          "query": "type: mysql",
+          "type": "lucene",
+          "id": 5
+        },
+        "12": {
+          "enable": true,
+          "pin": true,
+          "color": "#3F2B5B",
+          "alias": "all",
+          "query": "*",
+          "type": "lucene",
+          "id": 12
+        },
+        "17": {
+          "enable": true,
+          "pin": true,
+          "color": "#890F02",
+          "alias": "above_100ms",
+          "query": "type:http AND responsetime: [100 TO 100000]",
+          "type": "lucene",
+          "id": 17
+        },
+        "18": {
+          "id": 18,
+          "color": "#BA43A9",
+          "alias": "pgsql",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "type: pgsql"
+        },
+        "19": {
+          "id": 19,
+          "color": "#BF1B00",
+          "alias": "errors",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "status: Error"
+        }
+      },
+      "ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        17,
+        18,
+        19
+      ],
+      "idQueue": [
+        4
+      ]
+    }
   },
-  "refresh": false
+  "panel_hints": true
 }
