@@ -581,9 +581,9 @@
               "desc"
             ]
           },
-          "auto_int": true,
+          "auto_int": false,
           "resolution": 100,
-          "interval": "5m",
+          "interval": "1m",
           "intervals": [
             "auto",
             "1s",
@@ -655,9 +655,9 @@
               "desc"
             ]
           },
-          "auto_int": true,
+          "auto_int": false,
           "resolution": 100,
-          "interval": "5m",
+          "interval": "1m",
           "intervals": [
             "auto",
             "1s",
@@ -694,7 +694,7 @@
             "value_type": "cumulative",
             "query_as_alias": true
           },
-          "title": "Database responsetime"
+          "title": "Database Round Trip Time"
         },
         {
           "error": false,
@@ -909,7 +909,16 @@
   "nav": [
     {
       "type": "dashboard_dropdown",
-      "label": "Page: "
+      "label": "Page: ",
+      "collapse": false,
+      "notice": false,
+      "enable": true,
+      "dashboards": [
+        "MySQL Performance",
+        "Packetbeat Search",
+        "Packetbeat Statistics",
+        "PgSQL Performance"
+      ]
     },
     {
       "type": "timepicker",
