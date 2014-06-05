@@ -694,7 +694,7 @@
             "value_type": "cumulative",
             "query_as_alias": true
           },
-          "title": "Database responsetime"
+          "title": "Database Round Trip Time"
         },
         {
           "error": false,
