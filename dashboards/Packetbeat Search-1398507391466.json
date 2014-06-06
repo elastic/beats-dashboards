@@ -9,11 +9,16 @@
   "rows": [
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Graph",
+      "editable": true,
+      "height": "150px",
       "panels": [
         {
           "show_query": true,
           "bars": true,
-          "interval": "1m",
+          "y-axis": true,
           "zoomlinks": true,
           "annotate": {
             "sort": [
@@ -22,8 +27,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -41,15 +46,15 @@
           ],
           "timezone": "browser",
           "spyable": true,
+          "stack": true,
           "linewidth": 3,
-          "percentage": false,
           "fill": 0,
           "scale": 1,
           "span": 12,
           "title": "Transactions per min",
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "cumulative"
+            "value_type": "cumulative",
+            "query_as_alias": true
           },
           "legend": true,
           "derivative": false,
@@ -58,48 +63,46 @@
           "type": "histogram",
           "value_field": null,
           "x-axis": true,
-          "pointradius": 5,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
           "editable": true,
           "zerofill": true,
           "grid": {
             "max": null,
             "min": 0
           },
-          "stack": true,
+          "percentage": false,
           "legend_counts": true,
           "time_field": "@timestamp",
-          "y-axis": true,
+          "interval": "1m",
           "lines": false,
           "y_format": "none",
           "points": false,
           "mode": "count",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2
-            ]
-          },
+          "pointradius": 5,
           "resolution": 100,
           "options": true,
           "interactive": true
         }
-      ],
-      "collapse": false,
-      "title": "Graph",
-      "editable": true,
-      "height": "150px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Transactions",
+      "editable": true,
+      "height": "150px",
       "panels": [
         {
-          "sort": [
-            "@timestamp",
-            "desc"
-          ],
+          "status": "Stable",
           "header": true,
           "trimFactor": 300,
           "spyable": true,
@@ -111,16 +114,27 @@
           },
           "span": 12,
           "title": "Transactions",
-          "normTimes": true,
+          "pages": 10,
           "loadingEditor": false,
           "type": "table",
-          "status": "Stable",
-          "error": false,
+          "sort": [
+            "@timestamp",
+            "desc"
+          ],
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
           "editable": true,
           "offset": 0,
           "group": "default",
           "overflow": "min-height",
-          "pages": 10,
+          "normTimes": true,
           "localTime": false,
           "sortable": true,
           "fields": [
@@ -131,23 +145,11 @@
             "responsetime"
           ],
           "paging": true,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2
-            ]
-          },
+          "error": false,
           "timeField": "@timestamp",
           "highlight": []
         }
-      ],
-      "collapse": false,
-      "title": "Transactions",
-      "editable": true,
-      "height": "150px",
-      "collapsable": true
+      ]
     }
   ],
   "title": "Packetbeat Search",
@@ -163,8 +165,8 @@
     "save_temp_ttl": "30d",
     "load_elasticsearch": true,
     "save_local": true,
-    "save_elasticsearch": true,
     "save_temp_ttl_enable": true,
+    "save_elasticsearch": true,
     "save_gist": false,
     "save_default": true
   },
@@ -173,29 +175,38 @@
       "notice": false,
       "enable": true,
       "collapse": false,
-      "remember": 10,
       "pinned": true,
       "query": "*",
-      "type": "query",
       "history": [
         "type: http",
         "type: mysql",
         "type: redis",
         "*",
         ""
-      ]
+      ],
+      "type": "query",
+      "remember": 10
     },
     {
-      "notice": true,
+      "notice": false,
       "enable": true,
       "type": "filtering",
-      "collapse": false
+      "collapse": true
     }
   ],
   "nav": [
     {
       "type": "dashboard_dropdown",
-      "label": "Page: "
+      "label": "Page: ",
+      "collapse": false,
+      "notice": false,
+      "enable": true,
+      "dashboards": [
+        "MySQL Performance",
+        "Packetbeat Search",
+        "Packetbeat Statistics",
+        "PgSQL Performance"
+      ]
     },
     {
       "status": "Stable",
@@ -235,10 +246,10 @@
     "filter": {
       "list": {
         "0": {
-          "from": "now-12h",
-          "to": "now",
           "field": "@timestamp",
+          "from": "now-12h",
           "alias": "",
+          "to": "now",
           "mandate": "must",
           "active": true,
           "type": "time",
@@ -282,12 +293,22 @@
           "query": "type: redis",
           "type": "lucene",
           "id": 2
+        },
+        "3": {
+          "id": 3,
+          "color": "#EA6460",
+          "alias": "",
+          "pin": false,
+          "type": "lucene",
+          "enable": true,
+          "query": "type: pgsql"
         }
       },
       "ids": [
         0,
         1,
-        2
+        2,
+        3
       ],
       "idQueue": [
         1,

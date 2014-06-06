@@ -56,17 +56,7 @@
               3,
               4,
               5,
-              6,
-              7,
-              8,
-              9,
-              10,
-              11,
               12,
-              13,
-              14,
-              15,
-              16,
               17,
               18,
               19
@@ -90,154 +80,6 @@
     {
       "notice": false,
       "panels": [
-        {
-          "labels": true,
-          "tmode": "terms",
-          "valuefield": "",
-          "exclude": [],
-          "spyable": true,
-          "size": 10,
-          "style": {
-            "font-size": "10pt"
-          },
-          "span": 3,
-          "title": "Protocols",
-          "tilt": false,
-          "arrangement": "horizontal",
-          "field": "_type",
-          "other": false,
-          "loadingEditor": false,
-          "type": "terms",
-          "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
-          "queries": {
-            "mode": "selected",
-            "ids": [
-              12
-            ]
-          },
-          "order": "count"
-        },
-        {
-          "error": false,
-          "span": 3,
-          "editable": true,
-          "type": "terms",
-          "loadingEditor": false,
-          "field": "status",
-          "exclude": [],
-          "missing": false,
-          "other": false,
-          "size": 10,
-          "order": "count",
-          "style": {
-            "font-size": "10pt"
-          },
-          "donut": false,
-          "tilt": false,
-          "labels": true,
-          "arrangement": "horizontal",
-          "chart": "pie",
-          "counter_pos": "above",
-          "spyable": true,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5,
-              12,
-              17,
-              18,
-              19
-            ]
-          },
-          "tmode": "terms",
-          "tstat": "total",
-          "valuefield": "",
-          "title": "Success vs Error"
-        },
-        {
-          "show_query": true,
-          "bars": false,
-          "interval": "1m",
-          "zoomlinks": true,
-          "annotate": {
-            "sort": [
-              "_score",
-              "desc"
-            ],
-            "query": "*",
-            "enable": false,
-            "field": "_type",
-            "size": 20
-          },
-          "intervals": [
-            "auto",
-            "1s",
-            "1m",
-            "5m",
-            "10m",
-            "30m",
-            "1h",
-            "3h",
-            "12h",
-            "1d",
-            "1w",
-            "1y"
-          ],
-          "timezone": "browser",
-          "spyable": true,
-          "linewidth": 3,
-          "percentage": false,
-          "fill": 0,
-          "scale": 1,
-          "span": 6,
-          "title": "Transactions",
-          "tooltip": {
-            "query_as_alias": true,
-            "value_type": "cumulative"
-          },
-          "legend": true,
-          "derivative": false,
-          "loadingEditor": false,
-          "auto_int": false,
-          "type": "histogram",
-          "value_field": null,
-          "x-axis": true,
-          "pointradius": 5,
-          "editable": true,
-          "zerofill": true,
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "stack": false,
-          "legend_counts": true,
-          "time_field": "@timestamp",
-          "y-axis": true,
-          "lines": true,
-          "y_format": "none",
-          "points": false,
-          "mode": "count",
-          "queries": {
-            "mode": "selected",
-            "ids": [
-              12
-            ]
-          },
-          "resolution": 100,
-          "options": true,
-          "interactive": true
-        },
         {
           "span": 6,
           "editable": true,
@@ -907,7 +749,7 @@
     {
       "notice": false,
       "enable": true,
-      "collapse": false,
+      "collapse": true,
       "remember": 10,
       "pinned": true,
       "query": "*",
@@ -933,6 +775,19 @@
     }
   ],
   "nav": [
+    {
+      "type": "dashboard_dropdown",
+      "label": "Page: ",
+      "collapse": false,
+      "notice": false,
+      "enable": true,
+      "dashboards": [
+        "MySQL Performance",
+        "Packetbeat Search",
+        "Packetbeat Statistics",
+        "PgSQL Performance"
+      ]
+    },
     {
       "status": "Stable",
       "notice": false,
