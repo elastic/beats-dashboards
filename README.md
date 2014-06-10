@@ -45,5 +45,5 @@ Screenshots
 
 ![Packetbeat Search](http://packetbeat.com/static/screenshots/dashboard_search.png)
 
-More screenshots, you can find in the `screenshots` folder.
+You can find more screenshots in the `screenshots` folder.
 
