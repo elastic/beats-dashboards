@@ -38,4 +38,12 @@ insertion in Elasticsearch. To re-generate the files, use the `generate.py`
 script. If you only want to load the dashboards, you don't need to run that
 script.
 
+Screenshots
+-----------
+
+The `screenshots` folder contains screenshots of the dashboards. 
+
+![Packetbeat Statistics](http://packetbeat.com/static/screenshots/dashboard_statistics.png)
+
+![Packetbeat Search](http://packetbeat.com/static/screenshots/dashboard_search.png)
 
