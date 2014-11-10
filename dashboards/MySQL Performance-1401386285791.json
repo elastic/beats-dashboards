@@ -9,11 +9,16 @@
   "rows": [
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Statistics",
+      "editable": true,
+      "height": "200px",
       "panels": [
         {
           "show_query": true,
           "bars": false,
-          "interval": "5m",
+          "y-axis": true,
           "zoomlinks": true,
           "annotate": {
             "sort": [
@@ -22,8 +27,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -41,15 +46,15 @@
           ],
           "timezone": "browser",
           "spyable": true,
+          "stack": false,
           "linewidth": 3,
-          "percentage": false,
           "fill": 3,
           "scale": 1,
           "span": 6,
           "title": "Database errors",
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "cumulative"
+            "value_type": "cumulative",
+            "query_as_alias": true
           },
           "legend": true,
           "derivative": false,
@@ -58,27 +63,27 @@
           "type": "histogram",
           "value_field": null,
           "x-axis": true,
-          "pointradius": 5,
-          "editable": true,
-          "zerofill": true,
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "stack": false,
-          "legend_counts": true,
-          "time_field": "@timestamp",
-          "y-axis": true,
-          "lines": true,
-          "y_format": "none",
-          "points": false,
-          "mode": "count",
           "queries": {
             "mode": "selected",
             "ids": [
               7
             ]
           },
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "percentage": false,
+          "legend_counts": true,
+          "time_field": "@timestamp",
+          "interval": "5m",
+          "lines": true,
+          "y_format": "none",
+          "points": false,
+          "mode": "count",
+          "pointradius": 5,
           "resolution": 100,
           "options": true,
           "interactive": true
@@ -86,7 +91,7 @@
         {
           "show_query": true,
           "bars": false,
-          "interval": "5m",
+          "y-axis": true,
           "zoomlinks": true,
           "annotate": {
             "sort": [
@@ -95,8 +100,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -114,15 +119,15 @@
           ],
           "timezone": "browser",
           "spyable": true,
+          "stack": false,
           "linewidth": 3,
-          "percentage": false,
           "fill": 0,
           "scale": 1,
           "span": 6,
           "title": "SQL Verbs",
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "cumulative"
+            "value_type": "cumulative",
+            "query_as_alias": true
           },
           "legend": true,
           "derivative": false,
@@ -131,21 +136,6 @@
           "type": "histogram",
           "value_field": null,
           "x-axis": true,
-          "pointradius": 5,
-          "editable": true,
-          "zerofill": true,
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "stack": false,
-          "legend_counts": true,
-          "time_field": "@timestamp",
-          "y-axis": true,
-          "lines": true,
-          "y_format": "none",
-          "points": false,
-          "mode": "count",
           "queries": {
             "mode": "selected",
             "ids": [
@@ -155,6 +145,21 @@
               6
             ]
           },
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "percentage": false,
+          "legend_counts": true,
+          "time_field": "@timestamp",
+          "interval": "5m",
+          "lines": true,
+          "y_format": "none",
+          "points": false,
+          "mode": "count",
+          "pointradius": 5,
           "resolution": 100,
           "options": true,
           "interactive": true
@@ -162,7 +167,7 @@
         {
           "show_query": true,
           "bars": false,
-          "interval": "5m",
+          "y-axis": true,
           "zoomlinks": true,
           "annotate": {
             "sort": [
@@ -171,8 +176,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -190,15 +195,15 @@
           ],
           "timezone": "browser",
           "spyable": true,
+          "stack": false,
           "linewidth": 3,
-          "percentage": false,
           "fill": 0,
           "scale": 1,
           "span": 6,
           "title": "Reads vs Writes",
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "cumulative"
+            "value_type": "cumulative",
+            "query_as_alias": true
           },
           "legend": true,
           "derivative": false,
@@ -207,21 +212,6 @@
           "type": "histogram",
           "value_field": null,
           "x-axis": true,
-          "pointradius": 5,
-          "editable": true,
-          "zerofill": true,
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "stack": false,
-          "legend_counts": true,
-          "time_field": "@timestamp",
-          "y-axis": true,
-          "lines": true,
-          "y_format": "none",
-          "points": false,
-          "mode": "count",
           "queries": {
             "mode": "selected",
             "ids": [
@@ -229,6 +219,21 @@
               2
             ]
           },
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "percentage": false,
+          "legend_counts": true,
+          "time_field": "@timestamp",
+          "interval": "5m",
+          "lines": true,
+          "y_format": "none",
+          "points": false,
+          "mode": "count",
+          "pointradius": 5,
           "resolution": 100,
           "options": true,
           "interactive": true
@@ -236,7 +241,7 @@
         {
           "show_query": true,
           "bars": false,
-          "interval": "5m",
+          "y-axis": true,
           "zoomlinks": true,
           "annotate": {
             "sort": [
@@ -245,8 +250,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -264,15 +269,15 @@
           ],
           "timezone": "browser",
           "spyable": true,
+          "stack": true,
           "linewidth": 3,
-          "percentage": false,
           "fill": 2,
           "scale": 1,
           "span": 6,
           "title": "Database Volume",
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "cumulative"
+            "value_type": "cumulative",
+            "query_as_alias": true
           },
           "legend": true,
           "derivative": false,
@@ -281,27 +286,27 @@
           "type": "histogram",
           "value_field": null,
           "x-axis": true,
-          "pointradius": 5,
-          "editable": true,
-          "zerofill": true,
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "stack": true,
-          "legend_counts": true,
-          "time_field": "@timestamp",
-          "y-axis": true,
-          "lines": true,
-          "y_format": "short",
-          "points": false,
-          "mode": "count",
           "queries": {
             "mode": "selected",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "percentage": false,
+          "legend_counts": true,
+          "time_field": "@timestamp",
+          "interval": "5m",
+          "lines": true,
+          "y_format": "short",
+          "points": false,
+          "mode": "count",
+          "pointradius": 5,
           "resolution": 100,
           "options": true,
           "interactive": true
@@ -309,9 +314,9 @@
         {
           "show_query": true,
           "bars": false,
-          "interval": "1m",
+          "y-axis": true,
           "zoomlinks": true,
-          "scaleSeconds": false,
+          "value_field": "mysql.size",
           "annotate": {
             "sort": [
               "_score",
@@ -319,8 +324,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -338,44 +343,44 @@
           ],
           "timezone": "browser",
           "spyable": true,
+          "stack": true,
           "linewidth": 3,
-          "percentage": false,
           "fill": 1,
           "scale": 1,
           "span": 6,
           "title": "Database Throughput",
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "cumulative"
+            "value_type": "cumulative",
+            "query_as_alias": true
           },
           "legend": true,
           "derivative": false,
           "loadingEditor": false,
           "auto_int": false,
           "type": "histogram",
-          "value_field": "mysql.size",
+          "scaleSeconds": false,
           "x-axis": true,
-          "pointradius": 5,
-          "editable": true,
-          "zerofill": true,
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "stack": true,
-          "legend_counts": true,
-          "time_field": "@timestamp",
-          "y-axis": true,
-          "lines": true,
-          "y_format": "bytes",
-          "points": false,
-          "mode": "max",
           "queries": {
             "mode": "selected",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "percentage": false,
+          "legend_counts": true,
+          "time_field": "@timestamp",
+          "interval": "1m",
+          "lines": true,
+          "y_format": "bytes",
+          "points": false,
+          "mode": "max",
+          "pointradius": 5,
           "resolution": 100,
           "options": true,
           "interactive": true
@@ -383,7 +388,7 @@
         {
           "show_query": true,
           "bars": false,
-          "interval": "1m",
+          "y-axis": true,
           "zoomlinks": true,
           "annotate": {
             "sort": [
@@ -392,8 +397,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -411,15 +416,15 @@
           ],
           "timezone": "browser",
           "spyable": true,
+          "stack": true,
           "linewidth": 3,
-          "percentage": false,
           "fill": 0,
           "scale": 1,
           "span": 6,
           "title": "Database responsetime (ms)",
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "cumulative"
+            "value_type": "cumulative",
+            "query_as_alias": true
           },
           "legend": true,
           "derivative": false,
@@ -428,27 +433,27 @@
           "type": "histogram",
           "value_field": "responsetime",
           "x-axis": true,
-          "pointradius": 5,
-          "editable": true,
-          "zerofill": true,
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "stack": true,
-          "legend_counts": true,
-          "time_field": "@timestamp",
-          "y-axis": true,
-          "lines": true,
-          "y_format": "short",
-          "points": false,
-          "mode": "max",
           "queries": {
             "mode": "selected",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "percentage": false,
+          "legend_counts": true,
+          "time_field": "@timestamp",
+          "interval": "1m",
+          "lines": true,
+          "y_format": "short",
+          "points": false,
+          "mode": "max",
+          "pointradius": 5,
           "resolution": 100,
           "options": true,
           "interactive": true
@@ -472,18 +477,18 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "count",
-          "donut": false,
           "queries": {
             "mode": "selected",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "count",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -498,18 +503,23 @@
           },
           "span": 4,
           "title": "Top Slow Queries",
-          "normTimes": true,
+          "pages": 1,
           "loadingEditor": false,
           "type": "table",
           "sort": [
             "responsetime",
             "desc"
           ],
-          "error": false,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              0
+            ]
+          },
           "editable": true,
           "offset": 0,
           "overflow": "min-height",
-          "pages": 1,
+          "normTimes": true,
           "localTime": false,
           "sortable": true,
           "fields": [
@@ -517,12 +527,7 @@
             "responsetime"
           ],
           "paging": false,
-          "queries": {
-            "mode": "selected",
-            "ids": [
-              0
-            ]
-          },
+          "error": false,
           "timeField": "@timestamp",
           "highlight": [
             "responsetime"
@@ -540,18 +545,23 @@
           },
           "span": 4,
           "title": "Top biggest queries",
-          "normTimes": true,
+          "pages": 1,
           "loadingEditor": false,
           "type": "table",
           "sort": [
             "mysql.num_rows",
             "desc"
           ],
-          "error": false,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              0
+            ]
+          },
           "editable": true,
           "offset": 0,
           "overflow": "min-height",
-          "pages": 1,
+          "normTimes": true,
           "localTime": false,
           "sortable": true,
           "fields": [
@@ -559,24 +569,19 @@
             "mysql.num_rows"
           ],
           "paging": false,
-          "queries": {
-            "mode": "selected",
-            "ids": [
-              0
-            ]
-          },
+          "error": false,
           "timeField": "@timestamp",
           "highlight": []
         }
-      ],
-      "collapse": false,
-      "title": "Statistics",
-      "editable": true,
-      "height": "200px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Queries",
+      "editable": true,
+      "height": "150px",
       "panels": [
         {
           "header": true,
@@ -590,18 +595,23 @@
           },
           "span": 12,
           "title": "Database Queries",
-          "normTimes": true,
+          "pages": 10,
           "loadingEditor": false,
           "type": "table",
           "sort": [
             "@timestamp",
             "desc"
           ],
-          "error": false,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              0
+            ]
+          },
           "editable": true,
           "offset": 0,
           "overflow": "min-height",
-          "pages": 10,
+          "normTimes": true,
           "localTime": false,
           "sortable": true,
           "fields": [
@@ -611,21 +621,11 @@
             "responsetime"
           ],
           "paging": true,
-          "queries": {
-            "mode": "selected",
-            "ids": [
-              0
-            ]
-          },
+          "error": false,
           "timeField": "@timestamp",
           "highlight": []
         }
-      ],
-      "collapse": false,
-      "title": "Queries",
-      "editable": true,
-      "height": "150px",
-      "collapsable": true
+      ]
     }
   ],
   "title": "MySQL Performance",
@@ -637,24 +637,22 @@
     "hide": false,
     "save_temp": true,
     "load_elasticsearch_size": 20,
-    "load_local": true,
+    "load_local": false,
     "save_temp_ttl": "30d",
     "load_elasticsearch": true,
     "save_local": true,
-    "save_elasticsearch": true,
     "save_temp_ttl_enable": true,
+    "save_elasticsearch": true,
     "save_gist": false,
-    "save_default": true
+    "save_default": false
   },
   "pulldowns": [
     {
       "notice": false,
       "enable": true,
       "collapse": true,
-      "remember": 10,
       "pinned": true,
       "query": "*",
-      "type": "query",
       "history": [
         "mysql.iserror: true",
         "mysql.method: DELETE",
@@ -666,7 +664,9 @@
         "type: pgsql",
         "mysql.method: SELECT OR pgsql.method: SELECT",
         "mysql.method: INSERT OR pgsql.method: INSERT"
-      ]
+      ],
+      "type": "query",
+      "remember": 10
     },
     {
       "notice": true,
@@ -682,8 +682,9 @@
       "collapse": false,
       "dashboards": [
         "MySQL Performance",
-        "Packetbeat Search",
+        "Thrift RPC performance",
         "Packetbeat Statistics",
+        "Packetbeat Search",
         "PgSQL Performance"
       ],
       "label": "Page: ",
@@ -727,13 +728,13 @@
     "filter": {
       "list": {
         "0": {
-          "from": "now-12h",
-          "to": "now",
+          "type": "time",
           "field": "@timestamp",
-          "alias": "",
+          "from": "now-6h",
+          "to": "now",
           "mandate": "must",
           "active": true,
-          "type": "time",
+          "alias": "",
           "id": 0
         }
       },
