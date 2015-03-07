@@ -1,17 +1,34 @@
 #!/bin/sh
 
 if [ -z "$1" ]; then
-    _ELASTICHOST=localhost
+    ELASTICSEARCH=http://localhost:9200
 else
-    _ELASTICHOST=$1
+    ELASTICSEARCH=$1
 fi
-ELASTICSEARCH=http://$_ELASTICHOST:9200/
 
-for file in generated/*.json
+for file in dashboards/search/*.json
 do
     name=`basename $file .json`
-    echo "Loading $name: "
-    curl -XPUT $ELASTICSEARCH/kibana-int/dashboard/$name \
+    echo "Loading search $name:"
+    curl -XPUT $ELASTICSEARCH/.kibana/search/$name \
+        -d @$file || exit 1
+    echo
+done
+
+for file in dashboards/visualization/*.json
+do
+    name=`basename $file .json`
+    echo "Loading visualization $name:"
+    curl -XPUT $ELASTICSEARCH/.kibana/visualization/$name \
+        -d @$file || exit 1
+    echo
+done
+
+for file in dashboards/dashboard/*.json
+do
+    name=`basename $file .json`
+    echo "Loading dashboard $name:"
+    curl -XPUT $ELASTICSEARCH/.kibana/dashboard/$name \
         -d @$file || exit 1
     echo
 done

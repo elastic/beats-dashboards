@@ -1,0 +1,20 @@
+{
+  "sort": [
+    "timestamp", 
+    "desc"
+  ], 
+  "hits": 0, 
+  "description": "", 
+  "title": "Default Search", 
+  "version": 1, 
+  "kibanaSavedObjectMeta": {
+    "searchSourceJSON": "{\"index\":\"packetbeat-*\",\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}}},\"filter\":[]}"
+  }, 
+  "columns": [
+    "method", 
+    "type", 
+    "path", 
+    "responsetime", 
+    "status"
+  ]
+}
