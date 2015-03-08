@@ -1,0 +1,10 @@
+{
+  "hits": 0, 
+  "description": "", 
+  "title": "MySQL performance", 
+  "panelsJSON": "[{\"col\":3,\"id\":\"MySQL-Errors\",\"row\":1,\"size_x\":5,\"size_y\":3,\"type\":\"visualization\"},{\"col\":8,\"id\":\"MySQL-Methods\",\"row\":1,\"size_x\":5,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Navigation\",\"row\":1,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Reads-versus-Writes\",\"row\":7,\"size_x\":7,\"size_y\":3,\"type\":\"visualization\"},{\"col\":8,\"id\":\"MySQL-throughput\",\"row\":7,\"size_x\":5,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Most-frequent-MySQL-queries\",\"row\":10,\"size_x\":6,\"size_y\":6,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Slowest-MySQL-queries\",\"row\":10,\"size_x\":6,\"size_y\":6,\"type\":\"visualization\"},{\"id\":\"Mysql-response-times-percentiles\",\"type\":\"visualization\",\"size_x\":12,\"size_y\":3,\"col\":1,\"row\":4}]", 
+  "version": 1, 
+  "kibanaSavedObjectMeta": {
+    "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+  }
+}
