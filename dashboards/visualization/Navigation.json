@@ -1,5 +1,5 @@
 {
-  "visState": "{\"type\":\"markdown\",\"params\":{\"markdown\":\"###Pages:\\n\\n[Dashboard](/#/dashboard/Packetbeat-Dashboard)\\n\\n[MySQL performance](/#/dashboard/MySQL-performance)\\n\\n[PostgreSQL performance](/#/dashboard/PgSQL-performance)\\n\\n[Thrift-RPC performance](/#/dashboard/Packetbeat-Thrift)\"},\"aggs\":[],\"listeners\":{}}", 
+  "visState": "{\"type\":\"markdown\",\"params\":{\"markdown\":\"###Pages:\\n\\n[Dashboard](/#/dashboard/Packetbeat-Dashboard)\\n\\n[MySQL performance](/#/dashboard/MySQL-performance)\\n\\n[PostgreSQL performance](/#/dashboard/PgSQL-performance)\\n\\n[Thrift-RPC performance](/#/dashboard/Thrift-performance)\"},\"aggs\":[],\"listeners\":{}}", 
   "kibanaSavedObjectMeta": {
     "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
   }, 
