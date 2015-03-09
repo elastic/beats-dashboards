@@ -35,5 +35,5 @@ Screenshots
 -----------
 
   ![Packetbeat Statistics](/screenshots/Packetbeat-statistics.png)
-  ![MySQL performance](/screenshots/MySQL-performance.png)
+  ![MySql performance](/screenshots/MySql-performance.png)
   ![Thrift performance](/screenshots/Thrift-performance.png)
