@@ -34,4 +34,6 @@ dashboards.
 Screenshots
 -----------
 
-TODO
+  ![Packetbeat Statistics](/screenshots/Packetbeat-statistics.png)
+  ![MySQL performance](/screenshots/MySQL-performance.png)
+  ![Thrift performance](/screenshots/Thrift-performance.png)
