@@ -9,11 +9,16 @@
   "rows": [
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Statistics",
+      "editable": true,
+      "height": "200px",
       "panels": [
         {
           "show_query": true,
           "bars": true,
-          "interval": "1m",
+          "y-axis": true,
           "zoomlinks": true,
           "annotate": {
             "sort": [
@@ -22,8 +27,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -41,15 +46,15 @@
           ],
           "timezone": "browser",
           "spyable": true,
+          "stack": true,
           "linewidth": 3,
-          "percentage": false,
           "fill": 0,
           "scale": 1,
           "span": 6,
           "title": "Requests per minute",
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "cumulative"
+            "value_type": "cumulative",
+            "query_as_alias": true
           },
           "legend": true,
           "derivative": false,
@@ -58,27 +63,27 @@
           "type": "histogram",
           "value_field": null,
           "x-axis": true,
-          "pointradius": 5,
-          "editable": true,
-          "zerofill": true,
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "stack": true,
-          "legend_counts": true,
-          "time_field": "@timestamp",
-          "y-axis": true,
-          "lines": false,
-          "y_format": "none",
-          "points": false,
-          "mode": "count",
           "queries": {
             "mode": "selected",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "percentage": false,
+          "legend_counts": true,
+          "time_field": "@timestamp",
+          "interval": "1m",
+          "lines": false,
+          "y_format": "none",
+          "points": false,
+          "mode": "count",
+          "pointradius": 5,
           "resolution": 100,
           "options": true,
           "interactive": true
@@ -86,7 +91,7 @@
         {
           "show_query": true,
           "bars": false,
-          "interval": "5m",
+          "y-axis": true,
           "zoomlinks": true,
           "annotate": {
             "sort": [
@@ -95,8 +100,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -115,14 +120,13 @@
           "timezone": "browser",
           "spyable": true,
           "linewidth": 3,
-          "percentage": false,
           "fill": 3,
           "scale": 1,
           "span": 6,
           "title": "Thrift RPC errors",
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "cumulative"
+            "value_type": "cumulative",
+            "query_as_alias": true
           },
           "stack": false,
           "derivative": false,
@@ -131,40 +135,41 @@
           "type": "histogram",
           "value_field": null,
           "x-axis": true,
-          "pointradius": 5,
-          "editable": true,
-          "zerofill": true,
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "legend": true,
-          "legend_counts": true,
-          "time_field": "@timestamp",
-          "y-axis": true,
-          "lines": true,
-          "y_format": "none",
-          "points": false,
-          "mode": "count",
           "queries": {
             "mode": "selected",
             "ids": [
               7
             ]
           },
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "percentage": false,
+          "legend_counts": true,
+          "time_field": "@timestamp",
+          "interval": "5m",
+          "lines": true,
+          "y_format": "none",
+          "legend": true,
+          "points": false,
+          "mode": "count",
+          "pointradius": 5,
           "resolution": 100,
           "options": true,
           "interactive": true
         }
-      ],
-      "collapse": false,
-      "title": "Statistics",
-      "editable": true,
-      "height": "200px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Response times",
+      "editable": true,
+      "height": "150px",
       "panels": [
         {
           "header": true,
@@ -185,7 +190,12 @@
             "responsetime",
             "desc"
           ],
-          "error": false,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              0
+            ]
+          },
           "editable": true,
           "offset": 0,
           "overflow": "min-height",
@@ -197,12 +207,7 @@
             "responsetime"
           ],
           "paging": false,
-          "queries": {
-            "mode": "selected",
-            "ids": [
-              0
-            ]
-          },
+          "error": false,
           "timeField": "@timestamp",
           "highlight": [
             "responsetime"
@@ -211,7 +216,7 @@
         {
           "show_query": true,
           "bars": true,
-          "interval": "5m",
+          "y-axis": true,
           "zoomlinks": true,
           "annotate": {
             "sort": [
@@ -220,8 +225,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -239,15 +244,15 @@
           ],
           "timezone": "browser",
           "spyable": true,
+          "stack": true,
           "linewidth": 3,
-          "percentage": false,
           "fill": 0,
           "scale": 1,
           "span": 6,
           "title": "Response times evolution",
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "cumulative"
+            "value_type": "cumulative",
+            "query_as_alias": true
           },
           "legend": true,
           "derivative": false,
@@ -256,21 +261,6 @@
           "type": "histogram",
           "value_field": null,
           "x-axis": true,
-          "pointradius": 5,
-          "editable": true,
-          "zerofill": true,
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "stack": true,
-          "legend_counts": true,
-          "time_field": "@timestamp",
-          "y-axis": true,
-          "lines": false,
-          "y_format": "none",
-          "points": false,
-          "mode": "count",
           "queries": {
             "mode": "selected",
             "ids": [
@@ -279,19 +269,34 @@
               3
             ]
           },
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "percentage": false,
+          "legend_counts": true,
+          "time_field": "@timestamp",
+          "interval": "5m",
+          "lines": false,
+          "y_format": "none",
+          "points": false,
+          "mode": "count",
+          "pointradius": 5,
           "resolution": 100,
           "options": true,
           "interactive": true
         }
-      ],
-      "collapse": false,
-      "title": "Response times",
-      "editable": true,
-      "height": "150px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Tops",
+      "editable": true,
+      "height": "150px",
       "panels": [
         {
           "labels": true,
@@ -307,23 +312,23 @@
           "title": "Top methods",
           "tilt": false,
           "arrangement": "horizontal",
-          "field": "thrift.request.method",
+          "field": "method",
           "other": false,
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "bar",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "selected",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "chart": "bar",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -340,34 +345,34 @@
           "title": "Top methods with errors",
           "tilt": false,
           "arrangement": "horizontal",
-          "field": "thrift.request.method",
+          "field": "method",
           "other": true,
           "loadingEditor": false,
           "type": "terms",
           "missing": true,
-          "error": false,
-          "editable": true,
-          "chart": "bar",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "selected",
             "ids": [
               7
             ]
           },
+          "editable": true,
+          "chart": "bar",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         }
-      ],
-      "collapse": false,
-      "title": "Tops",
-      "editable": true,
-      "height": "150px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Queries",
+      "editable": true,
+      "height": "150px",
       "panels": [
         {
           "header": true,
@@ -388,7 +393,12 @@
             "@timestamp",
             "desc"
           ],
-          "error": false,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              0
+            ]
+          },
           "editable": true,
           "offset": 0,
           "overflow": "min-height",
@@ -397,28 +407,18 @@
           "sortable": true,
           "fields": [
             "@timestamp",
-            "thrift.request.method",
-            "thrift.request.params",
-            "thrift.reply.returnValue",
-            "thrift.reply.exceptions",
+            "query",
+            "thrift.return_value",
+            "thrift.exceptions",
+            "status",
             "responsetime"
           ],
           "paging": true,
-          "queries": {
-            "mode": "selected",
-            "ids": [
-              0
-            ]
-          },
+          "error": false,
           "timeField": "@timestamp",
           "highlight": []
         }
-      ],
-      "collapse": false,
-      "title": "Queries",
-      "editable": true,
-      "height": "150px",
-      "collapsable": true
+      ]
     }
   ],
   "title": "Thrift RPC performance",
@@ -434,8 +434,8 @@
     "save_temp_ttl": "30d",
     "load_elasticsearch": true,
     "save_local": true,
-    "save_elasticsearch": true,
     "save_temp_ttl_enable": true,
+    "save_elasticsearch": true,
     "save_gist": false,
     "save_default": false
   },
@@ -444,10 +444,8 @@
       "notice": false,
       "enable": true,
       "collapse": true,
-      "remember": 10,
       "pinned": true,
       "query": "*",
-      "type": "query",
       "history": [
         "status: error",
         "responsetime: {20 TO 30]",
@@ -459,13 +457,15 @@
         "responsetime: {1 TO 2]",
         "responsetime: {0 TO 1]",
         "responsetime: {40 TO 50]"
-      ]
+      ],
+      "type": "query",
+      "remember": 10
     },
     {
-      "notice": true,
+      "notice": false,
       "enable": true,
       "type": "filtering",
-      "collapse": false
+      "collapse": true
     }
   ],
   "nav": [
@@ -475,9 +475,10 @@
       "collapse": false,
       "dashboards": [
         "Thrift RPC performance",
-        "Packetbeat Statistics",
         "Packetbeat Search",
         "PgSQL Performance",
+        "Logstash Search",
+        "Packetbeat Statistics",
         "MySQL Performance"
       ],
       "label": "Page: ",
@@ -521,13 +522,13 @@
     "filter": {
       "list": {
         "0": {
-          "type": "time",
-          "field": "@timestamp",
           "from": "now-6h",
           "to": "now",
+          "field": "@timestamp",
+          "alias": "",
           "mandate": "must",
           "active": true,
-          "alias": "",
+          "type": "time",
           "id": 0
         },
         "1": {
