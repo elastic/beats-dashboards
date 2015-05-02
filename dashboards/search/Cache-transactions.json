@@ -1,6 +1,6 @@
 {
   "sort": [
-    "@timestamp", 
+    "timestamp", 
     "desc"
   ], 
   "hits": 0, 
