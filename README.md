@@ -23,6 +23,10 @@ You should now have the following pages loaded in Kibana:
  - **MySQL Performance**: This page demonstrates more advanced statistics like the top N slow MySQL queries, most frequent MySQL queries, the database throughput or database responsetime. To investigate a failure in your network, you can drill down to see all MySQL transactions in real-time.
  - **PgSQL Performance**: Similar with MySQL Performance dashboard, but for the Postgresql transactions.
 
+If you want to use HTTP authentication for Elasticsearch, you can specify the
+credentials as a second parameter:
+
+        ./load.sh http://localhost:9200 'admin:password'
 
 Technical details
 -----------------
