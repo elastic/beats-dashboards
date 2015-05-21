@@ -77,7 +77,7 @@
           },
           "percentage": false,
           "legend_counts": true,
-          "time_field": "@timestamp",
+          "time_field": "timestamp",
           "interval": "1m",
           "lines": false,
           "y_format": "none",
@@ -149,7 +149,7 @@
           },
           "percentage": false,
           "legend_counts": true,
-          "time_field": "@timestamp",
+          "time_field": "timestamp",
           "interval": "5m",
           "lines": true,
           "y_format": "none",
@@ -203,12 +203,12 @@
           "localTime": false,
           "sortable": true,
           "fields": [
-            "request_raw",
+            "request",
             "responsetime"
           ],
           "paging": false,
           "error": false,
-          "timeField": "@timestamp",
+          "timeField": "timestamp",
           "highlight": [
             "responsetime"
           ]
@@ -277,7 +277,7 @@
           },
           "percentage": false,
           "legend_counts": true,
-          "time_field": "@timestamp",
+          "time_field": "timestamp",
           "interval": "5m",
           "lines": false,
           "y_format": "none",
@@ -390,7 +390,7 @@
           "loadingEditor": false,
           "type": "table",
           "sort": [
-            "@timestamp",
+            "timestamp",
             "desc"
           ],
           "queries": {
@@ -406,7 +406,7 @@
           "localTime": false,
           "sortable": true,
           "fields": [
-            "@timestamp",
+            "timestamp",
             "query",
             "thrift.return_value",
             "thrift.exceptions",
@@ -415,7 +415,7 @@
           ],
           "paging": true,
           "error": false,
-          "timeField": "@timestamp",
+          "timeField": "timestamp",
           "highlight": []
         }
       ]
@@ -513,7 +513,7 @@
         "1d"
       ],
       "filter_id": 0,
-      "timefield": "@timestamp",
+      "timefield": "timestamp",
       "now": true,
       "type": "timepicker"
     }
@@ -524,7 +524,7 @@
         "0": {
           "from": "now-6h",
           "to": "now",
-          "field": "@timestamp",
+          "field": "timestamp",
           "alias": "",
           "mandate": "must",
           "active": true,

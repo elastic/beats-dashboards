@@ -67,7 +67,7 @@
           },
           "stack": true,
           "legend_counts": true,
-          "time_field": "@timestamp",
+          "time_field": "timestamp",
           "y-axis": true,
           "lines": false,
           "y_format": "none",
@@ -95,7 +95,7 @@
       "panels": [
         {
           "sort": [
-            "@timestamp",
+            "timestamp",
             "desc"
           ],
           "header": true,
@@ -122,7 +122,7 @@
           "localTime": false,
           "sortable": true,
           "fields": [
-            "@timestamp",
+            "timestamp",
             "type",
             "query",
             "status",
@@ -136,7 +136,7 @@
               0
             ]
           },
-          "timeField": "@timestamp",
+          "timeField": "timestamp",
           "highlight": []
         }
       ],
@@ -236,7 +236,7 @@
         "1d"
       ],
       "filter_id": 0,
-      "timefield": "@timestamp",
+      "timefield": "timestamp",
       "now": true,
       "type": "timepicker"
     }
@@ -247,7 +247,7 @@
         "0": {
           "from": "now-6h",
           "to": "now",
-          "field": "@timestamp",
+          "field": "timestamp",
           "alias": "",
           "mandate": "must",
           "active": true,

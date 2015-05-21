@@ -67,7 +67,7 @@
           },
           "legend": true,
           "legend_counts": true,
-          "time_field": "@timestamp",
+          "time_field": "timestamp",
           "y-axis": true,
           "lines": true,
           "y_format": "none",
@@ -140,7 +140,7 @@
           },
           "legend": true,
           "legend_counts": true,
-          "time_field": "@timestamp",
+          "time_field": "timestamp",
           "y-axis": true,
           "lines": true,
           "y_format": "none",
@@ -216,7 +216,7 @@
           },
           "legend": true,
           "legend_counts": true,
-          "time_field": "@timestamp",
+          "time_field": "timestamp",
           "y-axis": true,
           "lines": true,
           "y_format": "none",
@@ -290,7 +290,7 @@
           },
           "legend": true,
           "legend_counts": true,
-          "time_field": "@timestamp",
+          "time_field": "timestamp",
           "y-axis": true,
           "lines": true,
           "y_format": "short",
@@ -364,7 +364,7 @@
           },
           "legend": true,
           "legend_counts": true,
-          "time_field": "@timestamp",
+          "time_field": "timestamp",
           "y-axis": true,
           "lines": true,
           "y_format": "bytes",
@@ -437,7 +437,7 @@
           },
           "legend": true,
           "legend_counts": true,
-          "time_field": "@timestamp",
+          "time_field": "timestamp",
           "y-axis": true,
           "lines": true,
           "y_format": "short",
@@ -513,7 +513,7 @@
           "localTime": false,
           "sortable": true,
           "fields": [
-            "request_raw",
+            "request",
             "responsetime"
           ],
           "paging": false,
@@ -523,7 +523,7 @@
               0
             ]
           },
-          "timeField": "@timestamp",
+          "timeField": "timestamp",
           "highlight": [
             "responsetime"
           ]
@@ -565,7 +565,7 @@
               0
             ]
           },
-          "timeField": "@timestamp",
+          "timeField": "timestamp",
           "highlight": []
         }
       ],
@@ -594,7 +594,7 @@
           "loadingEditor": false,
           "type": "table",
           "sort": [
-            "@timestamp",
+            "timestamp",
             "desc"
           ],
           "error": false,
@@ -605,9 +605,9 @@
           "localTime": false,
           "sortable": true,
           "fields": [
-            "@timestamp",
-            "request_raw",
-            "response_raw",
+            "timestamp",
+            "request",
+            "response",
             "responsetime"
           ],
           "paging": true,
@@ -617,7 +617,7 @@
               0
             ]
           },
-          "timeField": "@timestamp",
+          "timeField": "timestamp",
           "highlight": []
         }
       ],
@@ -720,7 +720,7 @@
         "1d"
       ],
       "filter_id": 0,
-      "timefield": "@timestamp",
+      "timefield": "timestamp",
       "now": true,
       "type": "timepicker"
     }
@@ -731,7 +731,7 @@
         "0": {
           "from": "now-6h",
           "to": "now",
-          "field": "@timestamp",
+          "field": "timestamp",
           "alias": "",
           "mandate": "must",
           "active": true,

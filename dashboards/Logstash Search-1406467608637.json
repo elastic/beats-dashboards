@@ -21,7 +21,7 @@
       "list": {
         "0": {
           "type": "time",
-          "field": "@timestamp",
+          "field": "timestamp",
           "from": "now-12h",
           "to": "now",
           "mandate": "must",
@@ -51,7 +51,7 @@
           ],
           "type": "histogram",
           "mode": "count",
-          "time_field": "@timestamp",
+          "time_field": "timestamp",
           "value_field": null,
           "auto_int": true,
           "resolution": 100,
@@ -142,7 +142,7 @@
           "pages": 5,
           "offset": 0,
           "sort": [
-            "@timestamp",
+            "timestamp",
             "desc"
           ],
           "style": {
@@ -151,7 +151,7 @@
           "overflow": "min-height",
           "fields": [],
           "localTime": true,
-          "timeField": "@timestamp",
+          "timeField": "timestamp",
           "highlight": [],
           "sortable": true,
           "header": true,
@@ -237,7 +237,7 @@
         "2h",
         "1d"
       ],
-      "timefield": "@timestamp",
+      "timefield": "timestamp",
       "now": true,
       "filter_id": 0,
       "enable": true
