@@ -8,7 +8,7 @@
   "title": "Thrift transactions", 
   "version": 1, 
   "kibanaSavedObjectMeta": {
-    "searchSourceJSON": "{\"index\":\"packetbeat-*\",\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}}},\"filter\":[{\"meta\":{\"index\":\"packetbeat-*\",\"negate\":false,\"key\":\"type\",\"value\":\"thrift\",\"disabled\":false},\"query\":{\"match\":{\"type\":{\"query\":\"thrift\",\"type\":\"phrase\"}}}}],\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"type: thrift\"}}}"
+    "searchSourceJSON": "{\"index\":\"[packetbeat-]YYYY.MM.DD\",\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}}},\"filter\":[{\"meta\":{\"index\":\"[packetbeat-]YYYY.MM.DD\",\"negate\":false,\"key\":\"type\",\"value\":\"thrift\",\"disabled\":false},\"query\":{\"match\":{\"type\":{\"query\":\"thrift\",\"type\":\"phrase\"}}}}],\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"type: thrift\"}}}"
   }, 
   "columns": [
     "method", 

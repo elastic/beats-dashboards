@@ -8,7 +8,7 @@
   "title": "Errors", 
   "version": 1, 
   "kibanaSavedObjectMeta": {
-    "searchSourceJSON": "{\"index\":\"packetbeat-*\",\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}}},\"filter\":[{\"meta\":{\"index\":\"packetbeat-*\",\"negate\":true,\"key\":\"status\",\"value\":\"OK\",\"disabled\":false},\"query\":{\"match\":{\"status\":{\"query\":\"OK\",\"type\":\"phrase\"}}}}],\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}"
+    "searchSourceJSON": "{\"index\":\"[packetbeat-]YYYY.MM.DD\",\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}}},\"filter\":[{\"meta\":{\"index\":\"[packetbeat-]YYYY.MM.DD\",\"negate\":true,\"key\":\"status\",\"value\":\"OK\",\"disabled\":false},\"query\":{\"match\":{\"status\":{\"query\":\"OK\",\"type\":\"phrase\"}}}}],\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}"
   }, 
   "columns": [
     "type", 
