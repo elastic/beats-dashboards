@@ -35,6 +35,7 @@ def main():
     dump_objects(es, args.dir, "dashboard")
     dump_objects(es, args.dir, "visualization")
     dump_objects(es, args.dir, "search")
+    dump_objects(es, args.dir, "index-pattern")
 
 if __name__ == "__main__":
     main()
