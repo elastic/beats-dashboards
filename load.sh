@@ -7,18 +7,13 @@ else
 fi
 
 if [ -z "$2" ]; then
-    DIR=dashboards
-else
-    DIR=$2
-fi
-
-if [ -z "$3" ]; then
     CURL=curl
 else
-    CURL="curl --user $3"
+    CURL="curl --user $2"
 fi
 
 echo $CURL
+DIR=dashboards
 
 for file in $DIR/search/*.json
 do
