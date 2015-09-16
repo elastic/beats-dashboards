@@ -13,8 +13,9 @@ else
 fi
 
 echo $CURL
+DIR=dashboards
 
-for file in dashboards/search/*.json
+for file in $DIR/search/*.json
 do
     name=`basename $file .json`
     echo "Loading search $name:"
@@ -23,7 +24,7 @@ do
     echo
 done
 
-for file in dashboards/visualization/*.json
+for file in $DIR/visualization/*.json
 do
     name=`basename $file .json`
     echo "Loading visualization $name:"
@@ -32,7 +33,7 @@ do
     echo
 done
 
-for file in dashboards/dashboard/*.json
+for file in $DIR/dashboard/*.json
 do
     name=`basename $file .json`
     echo "Loading dashboard $name:"
@@ -40,3 +41,16 @@ do
         -d @$file || exit 1
     echo
 done
+
+for file in $DIR/index-pattern/*.json
+do
+    name=`basename $file .json`
+    printf -v escape "%q" $name
+    echo "Loading index pattern $escape:"
+
+    $CURL -XPUT $ELASTICSEARCH/.kibana/index-pattern/$escape \
+        -d @$file || exit 1
+    echo
+done
+
+
