@@ -1,5 +1,5 @@
-Packetbeat dashboards
-=====================
+Beats dashboards
+================
 
 This repository contains sample Kibana4 dashboards for visualizing the data
 gathered by the Elastic [Beats](https://www.elastic.co/products/beats).
