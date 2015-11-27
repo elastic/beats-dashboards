@@ -12,11 +12,14 @@ URL:
 
         ./load.sh http://localhost:9200
 
+If you want to use a custom kibana index, specify it as the second parameter
 
+        ./load.sh http://localhost:9200 .kibana_custom
+        
 If you want to use HTTP authentication for Elasticsearch, you can specify the
-credentials as a second parameter:
+credentials as a thirs parameter:
 
-        ./load.sh http://localhost:9200 'admin:password'
+        ./load.sh http://localhost:9200 .kibana_custom 'admin:password'
 
 Technical details
 -----------------
