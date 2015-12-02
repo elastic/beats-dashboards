@@ -3,5 +3,5 @@
   "intervalName": "days", 
   "fieldFormatMap": "{\"proc.cpu.user_p\":{\"id\":\"percent\"},\"proc.mem.share\":{\"id\":\"bytes\"},\"proc.mem.size\":{\"id\":\"bytes\"},\"proc.mem.rss\":{\"id\":\"bytes\"},\"swap.free\":{\"id\":\"bytes\"},\"swap.used_p\":{\"id\":\"percent\"},\"mem.used\":{\"id\":\"bytes\"},\"load.load15\":{\"id\":\"number\"},\"cpu.system_p\":{\"id\":\"percent\"},\"mem.total\":{\"id\":\"bytes\"},\"fs.used_p\":{\"id\":\"percent\"},\"proc.mem.rss_p\":{\"id\":\"percent\"},\"load.load1\":{\"id\":\"number\"},\"load.load5\":{\"id\":\"number\"},\"cpu.user_p\":{\"id\":\"percent\"},\"swap.used\":{\"id\":\"bytes\"},\"mem.free\":{\"id\":\"bytes\"},\"swap.actual_free\":{\"id\":\"bytes\"},\"mem.used_p\":{\"id\":\"percent\"},\"mem.actual_free\":{\"id\":\"bytes\"},\"mem.actual_used\":{\"id\":\"bytes\"},\"fs.used\":{\"id\":\"bytes\"},\"fs.avail\":{\"id\":\"bytes\"},\"fs.free\":{\"id\":\"bytes\"},\"fs.total\":{\"id\":\"bytes\"}}", 
   "timeFieldName": "@timestamp", 
-  "title": "[topbeat-]YYYY.MM.DD"
+  "title": "topbeat-*"
 }
