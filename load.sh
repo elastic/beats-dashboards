@@ -7,9 +7,15 @@ else
 fi
 
 if [ -z "$2" ]; then
+    KIBANAINDEX=".kibana"
+else
+    KIBANAINDEX=$2
+fi
+
+if [ -z "$3" ]; then
     CURL=curl
 else
-    CURL="curl --user $2"
+    CURL="curl --user $3"
 fi
 
 echo $CURL
@@ -19,7 +25,7 @@ for file in $DIR/search/*.json
 do
     name=`basename $file .json`
     echo "Loading search $name:"
-    $CURL -XPUT $ELASTICSEARCH/.kibana/search/$name \
+    $CURL -XPUT $ELASTICSEARCH/$KIBANAINDEX/search/$name \
         -d @$file || exit 1
     echo
 done
@@ -28,7 +34,7 @@ for file in $DIR/visualization/*.json
 do
     name=`basename $file .json`
     echo "Loading visualization $name:"
-    $CURL -XPUT $ELASTICSEARCH/.kibana/visualization/$name \
+    $CURL -XPUT $ELASTICSEARCH/$KIBANAINDEX/visualization/$name \
         -d @$file || exit 1
     echo
 done
@@ -37,7 +43,7 @@ for file in $DIR/dashboard/*.json
 do
     name=`basename $file .json`
     echo "Loading dashboard $name:"
-    $CURL -XPUT $ELASTICSEARCH/.kibana/dashboard/$name \
+    $CURL -XPUT $ELASTICSEARCH/$KIBANAINDEX/dashboard/$name \
         -d @$file || exit 1
     echo
 done
@@ -48,7 +54,7 @@ do
     printf -v escape "%q" $name
     echo "Loading index pattern $escape:"
 
-    $CURL -XPUT $ELASTICSEARCH/.kibana/index-pattern/$escape \
+    $CURL -XPUT $ELASTICSEARCH/$KIBANAINDEX/index-pattern/$escape \
         -d @$file || exit 1
     echo
 done
