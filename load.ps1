@@ -24,7 +24,6 @@ Options:
   -l | -url
     Elasticseacrh URL. By default is $ELASTICSEARCH.
   -u | -user
-    ### The powershell loader does not currently support this option
     Username to connect to Elasticsearch. By default no username is used.
   -i | -index
     Kibana index pattern where to save the dashboards, visualizations, index patterns. By default is .kibana.
@@ -54,10 +53,12 @@ if ($ELASTICSEARCH -eq "") {
   exit 1
 }
 
-if ($u -ne "" -or $user -ne "") {
-  echo "Sorry, user authentication is not yet supported for the powershell version of the loader."
-  print_usage
-  exit 1
+if ($u -ne "" ){
+  $user = $u
+}
+if ($user -ne "") {
+  $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}" -f $user)))
+  $CURL="Invoke-RestMethod -Headers @{Authorization=(`"Basic $base64AuthInfo`")}"
 }
 
 if ($i -ne "") {
