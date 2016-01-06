@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file based on the
 ### Deprecated
 
 ### Added
+- Add a dashboard for Windows Event Log statistics with data from Winlogbeat #60
 
 ### Bugfixes
 
