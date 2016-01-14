@@ -21,19 +21,24 @@ if (!(Get-Command $CURL -errorAction SilentlyContinue))
 function print_usage() {
   echo @"
 
-Load the dashboards, visualizations and index patterns into the given Elasticsearch instance.
+Load the dashboards, visualizations and index patterns into the given
+Elasticsearch instance.
 
 Usage:
-  $SCRIPT -url http://localhost:9200 -user admin -index .kibana_env1
+  $SCRIPT -url $ELASTICSEARCH -user admin -index $KIBANA_INDEX
 Options:
   -h | -help
     Print the help menu.
   -l | -url
     Elasticseacrh URL. By default is $ELASTICSEARCH.
   -u | -user
-    Username to connect to Elasticsearch. By default no username is used.
+    Username and password for authenticating to Elasticsearch using Basic
+    Authentication. The username and password should be separated by a
+    colon (i.e. "user:secret"). By default no username and password are
+    used.
   -i | -index
-    Kibana index pattern where to save the dashboards, visualizations, index patterns. By default is .kibana.
+    Kibana index pattern where to save the dashboards, visualizations,
+    index patterns. By default is $KIBANA_INDEX.
 
 "@
 }
@@ -81,7 +86,7 @@ if ($KIBANA_INDEX -eq "") {
 }
 
 $DIR="./dashboards"
-echo "Loading dashboards to $ELASTICSEARCH in $KIBANA_INDEX using $($CURL):"  
+echo "Loading dashboards to $ELASTICSEARCH in $KIBANA_INDEX"  
 
 ForEach ($file in Get-ChildItem "$DIR/search/" -Filter *.json) {
   $name = [io.path]::GetFileNameWithoutExtension($file.Name)

@@ -10,13 +10,20 @@ Installation
 To load the dashboards, execute the script pointing to the Elasticsearch HTTP
 URL:
 
-        ./load.sh -url http://localhost:9200
+        # Unix
+        ./load.sh -url "http://localhost:9200"
 
+        # Windows
+        .\load.ps1 -url "http://localhost:9200"
 
 If you want to use HTTP authentication for Elasticsearch, you can specify the
 credentials as a second parameter:
 
-        ./load.sh -url http://localhost:9200 -user 'admin:password'
+        # Unix
+        ./load.sh -url "http://localhost:9200" -user "admin:secret"
+
+        # Windows
+        .\load.ps1 -url "http://localhost:9200" -user "admin:secret"
 
 Technical details
 -----------------
