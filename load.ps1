@@ -11,22 +11,34 @@ $CURL="Invoke-RestMethod"
 $KIBANA_INDEX=".kibana"
 $SCRIPT=$MyInvocation.MyCommand.Name
 
+# Verify that Invoke-RestMethod is present. It was added in PS 3.
+if (!(Get-Command $CURL -errorAction SilentlyContinue))
+{
+  Write-Error "$CURL cmdlet was not found. You may need to upgrade your PowerShell version."
+  exit 1
+}
+
 function print_usage() {
   echo @"
 
-Load the dashboards, visualizations and index patterns into the given Elasticsearch instance.
+Load the dashboards, visualizations and index patterns into the given
+Elasticsearch instance.
 
 Usage:
-  $SCRIPT -url http://localhost:9200 -user admin -index .kibana_env1
+  $SCRIPT -url $ELASTICSEARCH -user admin -index $KIBANA_INDEX
 Options:
   -h | -help
     Print the help menu.
   -l | -url
     Elasticseacrh URL. By default is $ELASTICSEARCH.
   -u | -user
-    Username to connect to Elasticsearch. By default no username is used.
+    Username and password for authenticating to Elasticsearch using Basic
+    Authentication. The username and password should be separated by a
+    colon (i.e. "user:secret"). By default no username and password are
+    used.
   -i | -index
-    Kibana index pattern where to save the dashboards, visualizations, index patterns. By default is .kibana.
+    Kibana index pattern where to save the dashboards, visualizations,
+    index patterns. By default is $KIBANA_INDEX.
 
 "@
 }
@@ -58,7 +70,7 @@ if ($u -ne "" ){
 }
 if ($user -ne "") {
   $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}" -f $user)))
-  $CURL="Invoke-RestMethod -Headers @{Authorization=(`"Basic $base64AuthInfo`")}"
+  $headers=@{Authorization=("Basic $base64AuthInfo")}
 }
 
 if ($i -ne "") {
@@ -74,29 +86,29 @@ if ($KIBANA_INDEX -eq "") {
 }
 
 $DIR="./dashboards"
-echo "Loading dashboards to $ELASTICSEARCH in $KIBANA_INDEX using $($CURL):"  
+echo "Loading dashboards to $ELASTICSEARCH in $KIBANA_INDEX"  
 
 ForEach ($file in Get-ChildItem "$DIR/search/" -Filter *.json) {
   $name = [io.path]::GetFileNameWithoutExtension($file.Name)
   echo "Loading search $($name):"
-  &$CURL -Uri "$ELASTICSEARCH/$KIBANA_INDEX/search/$name" -Method PUT -Body $(Get-Content "$DIR/search/$file")
+  &$CURL -Headers $headers -Uri "$ELASTICSEARCH/$KIBANA_INDEX/search/$name" -Method PUT -Body $(Get-Content "$DIR/search/$file")
 }
 
 ForEach ($file in Get-ChildItem "$DIR/visualization/" -Filter *.json) {
   $name = [io.path]::GetFileNameWithoutExtension($file.Name)
   echo "Loading visualization $($name):"
-  &$CURL -Uri "$ELASTICSEARCH/$KIBANA_INDEX/visualization/$name" -Method PUT -Body $(Get-Content "$DIR/visualization/$file")
+  &$CURL -Headers $headers -Uri "$ELASTICSEARCH/$KIBANA_INDEX/visualization/$name" -Method PUT -Body $(Get-Content "$DIR/visualization/$file")
 }
 
 ForEach ($file in Get-ChildItem "$DIR/dashboard/" -Filter *.json) {
   $name = [io.path]::GetFileNameWithoutExtension($file.Name)
   echo "Loading dashboard $($name):"
-  &$CURL -Uri "$ELASTICSEARCH/$KIBANA_INDEX/dashboard/$name" -Method PUT -Body $(Get-Content "$DIR/dashboard/$file")
+  &$CURL -Headers $headers -Uri "$ELASTICSEARCH/$KIBANA_INDEX/dashboard/$name" -Method PUT -Body $(Get-Content "$DIR/dashboard/$file")
 }
 
 ForEach ($file in Get-ChildItem "$DIR/index-pattern/" -Filter *.json) {
   $json = Get-Content "$DIR/index-pattern/$file" -Raw | ConvertFrom-Json
   $name = $json.title
   echo "Loading index-pattern $($name):"
-  &$CURL -Uri "$ELASTICSEARCH/$KIBANA_INDEX/index-pattern/$name" -Method PUT -Body $(Get-Content "$DIR/index-pattern/$file")
+  &$CURL -Headers $headers -Uri "$ELASTICSEARCH/$KIBANA_INDEX/index-pattern/$name" -Method PUT -Body $(Get-Content "$DIR/index-pattern/$file")
 }
