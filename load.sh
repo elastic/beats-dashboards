@@ -14,25 +14,25 @@ KIBANA_INDEX=".kibana"
 print_usage() {
   echo "
   
-  Load the dashboards, visualizations and index patterns into the given Elasticsearch instance.
+Load the dashboards, visualizations and index patterns into the given
+Elasticsearch instance.
 
 Usage:
-
-  $0 -url http://localhost:9200 -user admin -index .kibana_env1
+  $(basename "$0") -url $ELASTICSEARCH -user admin:secret -index $KIBANA_INDEX
 
 Options:
-
   -h | -help
     Print the help menu.
-
   -l | -url
     Elasticseacrh URL. By default is $ELASTICSEARCH.
-
   -u | -user
-    Username to connect to Elasticsearch. By default no username is used.
-
+    Username and password for authenticating to Elasticsearch using Basic
+    Authentication. The username and password should be separated by a
+    colon (i.e. "admin:secret"). By default no username and password are
+    used.
   -i | -index
-    Kibana index pattern where to save the dashboards, visualizations, index patterns. By default is .kibana.
+    Kibana index pattern where to save the dashboards, visualizations,
+    index patterns. By default is $KIBANA_INDEX.
 
 " >&2
 }
@@ -83,7 +83,7 @@ shift 2
 done
 
 DIR=dashboards
-echo "Loading dashboards to $ELASTICSEARCH in $KIBANA_INDEX using $CURL:"  
+echo "Loading dashboards to $ELASTICSEARCH in $KIBANA_INDEX"  
 
 for file in $DIR/search/*.json
 do
@@ -114,7 +114,7 @@ done
 
 for file in $DIR/index-pattern/*.json
 do
-    name=`basename $file .json`
+    name=`grep -oP '"title": "\K[A-Z0-9a-z_#\-*]*' $file`
     echo "Loading index pattern $name:"
 
     $CURL -XPUT $ELASTICSEARCH/$KIBANA_INDEX/index-pattern/$name \
