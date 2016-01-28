@@ -114,7 +114,7 @@ done
 
 for file in $DIR/index-pattern/*.json
 do
-    name=`grep -oP '"title": "\K[A-Z0-9a-z_#\-*]*' $file`
+    name=`awk '$1 == "\"title\":" {gsub(/"/, "", $2); print $2}' $file`
     echo "Loading index pattern $name:"
 
     $CURL -XPUT $ELASTICSEARCH/$KIBANA_INDEX/index-pattern/$name \
