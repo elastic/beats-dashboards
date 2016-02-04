@@ -87,37 +87,37 @@ echo "Loading dashboards to $ELASTICSEARCH in $KIBANA_INDEX"
 
 for file in $DIR/search/*.json
 do
-    name=`basename $file .json`
-    echo "Loading search $name:"
-    $CURL -XPUT $ELASTICSEARCH/$KIBANA_INDEX/search/$name \
+    NAME=`basename $file .json`
+    echo "Loading search $NAME:"
+    $CURL -XPUT $ELASTICSEARCH/$KIBANA_INDEX/search/$NAME \
         -d @$file || exit 1
     echo
 done
 
 for file in $DIR/visualization/*.json
 do
-    name=`basename $file .json`
-    echo "Loading visualization $name:"
-    $CURL -XPUT $ELASTICSEARCH/$KIBANA_INDEX/visualization/$name \
+    NAME=`basename $file .json`
+    echo "Loading visualization $NAME:"
+    $CURL -XPUT $ELASTICSEARCH/$KIBANA_INDEX/visualization/$NAME \
         -d @$file || exit 1
     echo
 done
 
 for file in $DIR/dashboard/*.json
 do
-    name=`basename $file .json`
-    echo "Loading dashboard $name:"
-    $CURL -XPUT $ELASTICSEARCH/$KIBANA_INDEX/dashboard/$name \
+    NAME=`basename $file .json`
+    echo "Loading dashboard $NAME:"
+    $CURL -XPUT $ELASTICSEARCH/$KIBANA_INDEX/dashboard/$NAME \
         -d @$file || exit 1
     echo
 done
 
 for file in $DIR/index-pattern/*.json
 do
-    name=`awk '$1 == "\"title\":" {gsub(/"/, "", $2); print $2}' $file`
-    echo "Loading index pattern $name:"
+    NAME=`awk '$1 == "\"title\":" {gsub(/"/, "", $2); print $2}' $file`
+    echo "Loading index pattern $NAME:"
 
-    $CURL -XPUT $ELASTICSEARCH/$KIBANA_INDEX/index-pattern/$name \
+    $CURL -XPUT $ELASTICSEARCH/$KIBANA_INDEX/index-pattern/$NAME \
         -d @$file || exit 1
     echo
 done
