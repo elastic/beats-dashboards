@@ -1,0 +1,902 @@
+[
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "proc.cpu.total",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "swap.used_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": false,
+        "indexed": false,
+        "name": "_source",
+        "scripted": false,
+        "type": "_source"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "count",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "proc.cpu.user",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "type",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "proc.mem.share",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "proc.ppid",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpu.system_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "load.load15",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "fs.used_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "beat.hostname",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "proc.mem.size",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "proc.mem.rss",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "load.load5",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "proc.name",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "proc.cpu.start_time",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "proc.mem.rss_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "load.load1",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "proc.pid",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": false,
+        "indexed": false,
+        "name": "_index",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "swap.actual_used_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpu.user_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "mem.actual_used_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "proc.state",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "@timestamp",
+        "scripted": false,
+        "type": "date"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "beat.name",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "proc.cpu.system",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "mem.used_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu1.system",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu3.user",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu3.steal",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu3.idle",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu3.system_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu2.system",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpu.irq",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "mem.used",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu2.user",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu2.softirq",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu1.nice",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "mem.total",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu0.idle",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "swap.used",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpu.steal",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpu.system",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu0.system",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "swap.total",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu1.system_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu3.iowait",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu2.nice",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu1.steal",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "mem.actual_used",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpu.softirq",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu3.nice",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "mem.actual_free",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu2.idle",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu3.user_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu2.iowait",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu3.irq",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "swap.free",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu2.system_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu0.user",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu0.steal",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu1.irq",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpu.idle",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpu.iowait",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu0.irq",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu0.user_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpu.nice",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu3.softirq",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu2.steal",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu1.idle",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu0.system_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu2.user_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu1.user",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu0.iowait",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "mem.free",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpu.user",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu1.iowait",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu2.irq",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu3.system",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu1.softirq",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu0.nice",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu0.softirq",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "cpus.cpu1.user_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "fs.files",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "fs.free_files",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "fs.device_name",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "fs.used",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "fs.avail",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "fs.free",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "fs.total",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "fs.mount_point",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "swap.actual_used",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "swap.actual_free",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "proc.cpu.total_p",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": false,
+        "indexed": false,
+        "name": "_id",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": false,
+        "indexed": false,
+        "name": "_type",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": false,
+        "indexed": false,
+        "name": "_score",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "proc.cpu.user_p",
+        "scripted": false,
+        "type": "number"
+    }
+]

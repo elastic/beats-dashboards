@@ -1,3 +1,5 @@
+/.idea
+
 *.swp
 save/env
 .DS_Store

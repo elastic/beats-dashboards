@@ -1,0 +1,110 @@
+[
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "offset",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": false,
+        "indexed": false,
+        "name": "_index",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "line",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": false,
+        "indexed": true,
+        "name": "_type",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": true,
+        "count": 0,
+        "doc_values": false,
+        "indexed": true,
+        "name": "message",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": false,
+        "indexed": false,
+        "name": "_source",
+        "scripted": false,
+        "type": "_source"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": false,
+        "indexed": false,
+        "name": "_id",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": false,
+        "indexed": true,
+        "name": "@timestamp",
+        "scripted": false,
+        "type": "date"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "beat.name",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "count",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "source",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "type",
+        "scripted": false,
+        "type": "string"
+    }
+]
