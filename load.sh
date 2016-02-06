@@ -10,21 +10,22 @@
 ELASTICSEARCH=http://localhost:9200
 CURL=curl
 KIBANA_INDEX=".kibana"
+BEAT_CONFIG=".beatconfig"
 
 print_usage() {
   echo "
-  
+
 Load the dashboards, visualizations and index patterns into the given
 Elasticsearch instance.
 
 Usage:
-  $(basename "$0") -url $ELASTICSEARCH -user admin:secret -index $KIBANA_INDEX
+  $(basename "$0") -url ${ELASTICSEARCH} -user admin:secret -index ${KIBANA_INDEX}
 
 Options:
   -h | -help
     Print the help menu.
   -l | -url
-    Elasticseacrh URL. By default is $ELASTICSEARCH.
+    Elasticseacrh URL. By default is ${ELASTICSEARCH}.
   -u | -user
     Username and password for authenticating to Elasticsearch using Basic
     Authentication. The username and password should be separated by a
@@ -32,7 +33,7 @@ Options:
     used.
   -i | -index
     Kibana index pattern where to save the dashboards, visualizations,
-    index patterns. By default is $KIBANA_INDEX.
+    index patterns. By default is ${KIBANA_INDEX}.
 
 " >&2
 }
@@ -55,7 +56,7 @@ case $1 in
             print_usage
             exit 1
         fi
-        CURL="curl --user $USER"
+        CURL="curl --user ${USER}"
         ;;
 
     -i | -index )
@@ -82,44 +83,57 @@ esac
 shift 2
 done
 
+if [ -f ${BEAT_CONFIG} ]; then
+  for ln in `cat ${BEAT_CONFIG}`; do
+    BUILD_STRING="${BUILD_STRING}s/${ln}/g;"
+  done
+  SED_STRING=`echo ${BUILD_STRING} | sed 's/;$//'`
+fi
+# Failsafe
+if [ -z ${SED_STRING} ]; then
+  SED_STRING="s/packetbeat-/packetbeat-/g;s/filebeat-/filebeat-/g;s/topbeat-/topbeat-/g;s/winlogonbeat-/winlogonbeat-/g"
+fi
+
 DIR=dashboards
-echo "Loading dashboards to $ELASTICSEARCH in $KIBANA_INDEX"  
+echo "Loading dashboards to ${ELASTICSEARCH} in ${KIBANA_INDEX}"
 
-for file in $DIR/search/*.json
+TMP_SED_FILE="${DIR}/search/tmp_search.json"
+for file in ${DIR}/search/*.json
 do
-    name=`basename $file .json`
-    echo "Loading search $name:"
-    $CURL -XPUT $ELASTICSEARCH/$KIBANA_INDEX/search/$name \
-        -d @$file || exit 1
+    NAME=`basename ${file} .json`
+    echo "Loading search ${NAME}:"
+#    sed -i ${SED_STRING} ${file}
+    sed ${SED_STRING} ${file} > ${TMP_SED_FILE}
+    ${CURL} -XPUT ${ELASTICSEARCH}/${KIBANA_INDEX}/search/${NAME} \
+        -d @${TMP_SED_FILE} || exit 1
+    echo
+done
+rm ${TMP_SED_FILE}
+
+for file in ${DIR}/visualization/*.json
+do
+    NAME=`basename ${file} .json`
+    echo "Loading visualization ${NAME}:"
+    ${CURL} -XPUT ${ELASTICSEARCH}/${KIBANA_INDEX}/visualization/${NAME} \
+        -d @${file} || exit 1
     echo
 done
 
-for file in $DIR/visualization/*.json
+for file in ${DIR}/dashboard/*.json
 do
-    name=`basename $file .json`
-    echo "Loading visualization $name:"
-    $CURL -XPUT $ELASTICSEARCH/$KIBANA_INDEX/visualization/$name \
-        -d @$file || exit 1
+    NAME=`basename ${file} .json`
+    echo "Loading dashboard ${NAME}:"
+    ${CURL} -XPUT ${ELASTICSEARCH}/${KIBANA_INDEX}/dashboard/${NAME} \
+        -d @${file} || exit 1
     echo
 done
 
-for file in $DIR/dashboard/*.json
+for file in ${DIR}/index-pattern/*.json
 do
-    name=`basename $file .json`
-    echo "Loading dashboard $name:"
-    $CURL -XPUT $ELASTICSEARCH/$KIBANA_INDEX/dashboard/$name \
-        -d @$file || exit 1
+    NAME=`awk '$1 == "\"title\":" {gsub(/"/, "", $2); print $2}' ${file}`
+    echo "Loading index pattern ${NAME}:"
+
+    ${CURL} -XPUT ${ELASTICSEARCH}/${KIBANA_INDEX}/index-pattern/${NAME} \
+        -d @${file} || exit 1
     echo
 done
-
-for file in $DIR/index-pattern/*.json
-do
-    name=`awk '$1 == "\"title\":" {gsub(/"/, "", $2); print $2}' $file`
-    echo "Loading index pattern $name:"
-
-    $CURL -XPUT $ELASTICSEARCH/$KIBANA_INDEX/index-pattern/$name \
-        -d @$file || exit 1
-    echo
-done
-
-
