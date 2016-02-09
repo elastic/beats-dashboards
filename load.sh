@@ -74,7 +74,7 @@ case $1 in
 
      *)
         echo "Error: Unknown option $2"
-        print_usageUSER
+        print_usage
         exit 1
         ;;
 
