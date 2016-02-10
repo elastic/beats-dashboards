@@ -1,5 +1,5 @@
-packetbeat-/rocketbeat-
-filebeat-/rawbeat-
-topbeat-/greatbeat-
-winlogonbeat-/win98beat-
+packetbeat-/packetbeat-
+filebeat-/filebeat-
+topbeat-/topbeat-
+winlogonbeat-/winlogonbeat-
 logstash-/logstash-
