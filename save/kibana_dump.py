@@ -4,9 +4,9 @@ import os
 import json
 
 
-def dump_objects(es, output_directory, doc_type):
+def dump_objects(es, output_directory, index, doc_type):
     res = es.search(
-        index='.kibana',
+        index=index,
         doc_type=doc_type,
         size=1000)
 
@@ -28,14 +28,15 @@ def main():
     parser.add_argument("--url", help="Elasticsearch URL. E.g. " +
                         "http://localhost:9200.", required=True)
     parser.add_argument("--dir", help="Output directory", default="saved")
+    parser.add_argument("--index", help="Kibana index", default=".kibana")
 
     args = parser.parse_args()
 
     es = Elasticsearch(args.url)
-    dump_objects(es, args.dir, "dashboard")
-    dump_objects(es, args.dir, "visualization")
-    dump_objects(es, args.dir, "search")
-    dump_objects(es, args.dir, "index-pattern")
+    dump_objects(es, args.dir, args.index, "dashboard")
+    dump_objects(es, args.dir, args.index, "visualization")
+    dump_objects(es, args.dir, args.index, "search")
+    dump_objects(es, args.dir, args.index, "index-pattern")
 
 if __name__ == "__main__":
     main()
