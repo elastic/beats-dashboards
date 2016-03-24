@@ -88,6 +88,9 @@ if ($KIBANA_INDEX -eq "") {
 $DIR="./dashboards"
 echo "Loading dashboards to $ELASTICSEARCH in $KIBANA_INDEX"  
 
+&$CURL -Headers $headers -Uri "$ELASTICSEARCH/$KIBANA_INDEX" -Method PUT
+&$CURL -Headers $headers -Uri "$ELASTICSEARCH/$KIBANA_INDEX/_mapping/search" -Method PUT -Body '{"search": {"properties": {"hits": {"type": "integer"}, "version": {"type": "integer"}}}}'
+
 ForEach ($file in Get-ChildItem "$DIR/search/" -Filter *.json) {
   $name = [io.path]::GetFileNameWithoutExtension($file.Name)
   echo "Loading search $($name):"
