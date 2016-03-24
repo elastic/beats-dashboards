@@ -117,7 +117,7 @@ do
     NAME=`awk '$1 == "\"title\":" {gsub(/[",]/, "", $2); print $2}' ${file}`
     echo "Loading index pattern ${NAME}:"
 
-    ${CURL} -XPUT ${ELASTICSEARCH}/${KIBANA_INDEX}/index-pattern/${NAME} \
+    ${CURL} --globoff -XPUT ${ELASTICSEARCH}/${KIBANA_INDEX}/index-pattern/${NAME} \
         -d @${file} || exit 1
     echo
 done
