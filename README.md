@@ -85,3 +85,4 @@ Screenshots
   ![MySql performance](/screenshots/MySql-performance.png)
   ![Thrift performance](/screenshots/Thrift-performance.png)
   ![Windows Event Log Statistics](/screenshots/winlogbeat-dashboard.png)
+  ![NFS traffic Statistics](/screenshots/NFS-dashboard.png)
