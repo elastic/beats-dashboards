@@ -1,6 +1,5 @@
 {
   "visState": "{\"title\":\"Navigation\",\"type\":\"markdown\",\"params\":{\"markdown\":\"###Packetbeat:\\n\\n[Dashboard](#/dashboard/Packetbeat-Dashboard)\\n\\n[Web transactions](#/dashboard/HTTP)\\n\\n[MySQL performance](#/dashboard/MySQL-performance)\\n\\n[PostgreSQL performance](#/dashboard/PgSQL-performance)\\n\\n[MongoDB performance](#/dashboard/MongoDB-performance)\\n\\n[Thrift-RPC performance](#/dashboard/Thrift-performance)\\n\\n[NFS performance](#/dashboard/NFS-packetbeat)\\n\\n###Topbeat:\\n\\n[Dashboard](#/dashboard/Topbeat-Dashboard)\\n\\n###Winlogbeat:\\n\\n[Dashboard](#/dashboard/Winlogbeat-Dashboard)\"},\"aggs\":[],\"listeners\":{}}", 
->>>>>>> Add a link to the NFS dashboard in the Navigation
   "description": "", 
   "title": "Navigation", 
   "uiStateJSON": "{}", 
