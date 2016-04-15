@@ -1,0 +1,209 @@
+[
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": false,
+        "indexed": false,
+        "name": "_index",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": true,
+        "count": 0,
+        "doc_values": false,
+        "indexed": true,
+        "name": "message",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "@timestamp",
+        "scripted": false,
+        "type": "date"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": false,
+        "indexed": false,
+        "name": "_source",
+        "scripted": false,
+        "type": "_source"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "record_number",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "user.name",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "type",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "user.domain",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "source_name",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "computer_name",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "log_name",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "level",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "count",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "beat.name",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "beat.hostname",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "event_id",
+        "scripted": false,
+        "type": "number"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "user.type",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "user.identifier",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "message_error",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": true,
+        "indexed": true,
+        "name": "category",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": false,
+        "indexed": false,
+        "name": "_id",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": false,
+        "indexed": false,
+        "name": "_type",
+        "scripted": false,
+        "type": "string"
+    },
+    {
+        "analyzed": false,
+        "count": 0,
+        "doc_values": false,
+        "indexed": false,
+        "name": "_score",
+        "scripted": false,
+        "type": "number"
+    }
+]
