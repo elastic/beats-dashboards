@@ -10,10 +10,11 @@
 ELASTICSEARCH=http://localhost:9200
 CURL=curl
 KIBANA_INDEX=".kibana"
+BEAT_CONFIG=".beatconfig"
 
 print_usage() {
   echo "
-  
+
 Load the dashboards, visualizations and index patterns into the given
 Elasticsearch instance.
 
@@ -82,6 +83,17 @@ esac
 shift 2
 done
 
+if [ -f ${BEAT_CONFIG} ]; then
+  for ln in `cat ${BEAT_CONFIG}`; do
+    BUILD_STRING="${BUILD_STRING}s/${ln}/g;"
+  done
+  SED_STRING=`echo ${BUILD_STRING} | sed 's/;$//'`
+fi
+# Failsafe
+if [ -z ${SED_STRING} ]; then
+  SED_STRING="s/packetbeat-/packetbeat-/g;s/filebeat-/filebeat-/g;s/topbeat-/topbeat-/g;s/winlogonbeat-/winlogonbeat-/g"
+fi
+
 DIR=dashboards
 echo "Loading dashboards to ${ELASTICSEARCH} in ${KIBANA_INDEX}"
 
@@ -89,14 +101,17 @@ echo "Loading dashboards to ${ELASTICSEARCH} in ${KIBANA_INDEX}"
 ${CURL} -XPUT "${ELASTICSEARCH}/${KIBANA_INDEX}"
 ${CURL} -XPUT "${ELASTICSEARCH}/${KIBANA_INDEX}/_mapping/search" -d'{"search": {"properties": {"hits": {"type": "integer"}, "version": {"type": "integer"}}}}'
 
+TMP_SED_FILE="${DIR}/search/tmp_search.json"
 for file in ${DIR}/search/*.json
 do
     NAME=`basename ${file} .json`
     echo "Loading search ${NAME}:"
+    sed ${SED_STRING} ${file} > ${TMP_SED_FILE}
     ${CURL} -XPUT ${ELASTICSEARCH}/${KIBANA_INDEX}/search/${NAME} \
-        -d @${file} || exit 1
+        -d @${TMP_SED_FILE} || exit 1
     echo
 done
+rm ${TMP_SED_FILE}
 
 for file in ${DIR}/visualization/*.json
 do
@@ -125,5 +140,3 @@ do
         -d @${file} || exit 1
     echo
 done
-
-
