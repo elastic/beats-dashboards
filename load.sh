@@ -55,7 +55,7 @@ case $1 in
             print_usage
             exit 1
         fi
-        CURL="curl --user $USER"
+        CURL="$CURL --user $USER"
         ;;
 
     -i | -index )
